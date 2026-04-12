@@ -2,12 +2,16 @@
 title: "Informatik 1: Einführungsveranstaltung"
 subtitle: "Wirtschaftsingenieurwesen Bachelor"
 author: "HTW Berlin -- Wirtschaftsingenieurwesen"
-date: "WiSe 2025-26"
+date: "SoSe 2026"
 header-includes:
   - \usepackage{etoolbox}
+  - \usepackage{tcolorbox}
   - |
     \AtBeginEnvironment{longtable}{\footnotesize}
     \renewcommand{\arraystretch}{1.15}
+    \renewenvironment{quote}
+      {\begin{tcolorbox}[colback=gray!10, colframe=gray!50, left=4pt, right=4pt, top=2pt, bottom=2pt, arc=0pt]}
+      {\end{tcolorbox}}
 ---
 
 # Agenda
@@ -16,7 +20,7 @@ header-includes:
 2. Semestertermine
 3. Prüfungsmodalitäten
 4. Inhaltsübersicht
-5. Google Colab
+5. Entwicklungsumgebungen
 6. Ergänzende Klausurhinweise
 
 ---
@@ -49,8 +53,8 @@ header-includes:
 <!-- TODO: Termine für aktuelles Semester aktualisieren -->
 
 | Tag | Zeit | Rhythmus | Dauer | Raum |
-|-----|------|----------|-------|------|
-| Mi. | 14:00 -- 17:15 | wöchentlich | 08.10.25 -- 11.02.26 | TGS Haus 2 001 |
+|-|---|---|---|---|
+| Mo. | 14:00 -- 17:15 | wöchentlich | 13.04.26 -- X | TGS Haus 1 404 |
 
 Lehrperson: Zwanzig
 
@@ -59,11 +63,11 @@ Lehrperson: Zwanzig
 # 2. Semestertermine: Übung
 
 | Gruppe | Rhythmus | Dauer | Räume |
-|------------|----------------|---------------------|---------------------|
-| 1. Gruppe | gerade Wochen | 15.10.25 -- 04.02.26 | TGS 1a/b 425 + 427 |
-| 2. Gruppe | ungerade Wochen | 08.10.25 -- 11.02.26 | TGS 1a/b 425 + 427 |
+|-|-|-|-|
+| 1. Gruppe | gerade Wochen | 13.04.26 -- X | TGS 1a/b 427 |
+| 2. Gruppe | ungerade Wochen | 20.04.26 -- X | TGS 1a/b 427 |
 
-Jeweils Mittwoch 17:30 -- 20:45, Lehrperson: Zwanzig
+Jeweils Montags 17:30 -- 20:45, Lehrperson: Zwanzig
 
 ---
 
@@ -83,16 +87,17 @@ Jeweils Mittwoch 17:30 -- 20:45, Lehrperson: Zwanzig
 > **Die erfolgreiche Abgabe der Wiederholungsfragen ist Voraussetzung für die Prüfungszulassung.**
 
 - Wiederholungsfragen = notwendige Prüfungsvorleistung
-- Zulassung für drei Semester gültig
-- Anerkennung aus Vorsemestern ggf. möglich
-- Alle Hilfsmittel bei der Bearbeitung erlaubt
+- Wöchentlich (manchmal alle zwei Wochen) als **Moodle-Test** verfügbar
 - **80% der Tests müssen bestanden sein** (je Test min. 50%)
+- Zulassung ist **nur drei Semester gültig** -- danach muss sie neu erworben werden
+- Anerkennung aus Vorsemestern: **Bringpflicht** durch die Studierenden (Nachweis selbst erbringen!)
+- Alle Hilfsmittel bei der Bearbeitung erlaubt
 
 ---
 
 # 3. Prüfungsmodalitäten: Tests
 
-## Wöchentliche Tests mit 2 Wochen Bearbeitungszeit
+## Tests mit 2 Wochen Bearbeitungszeit
 
 - Beliebig oft bearbeitbar im Verfügbarkeitszeitraum
 - Keine Einschränkung bei den Hilfsmitteln
@@ -133,9 +138,23 @@ Jeweils Mittwoch 17:30 -- 20:45, Lehrperson: Zwanzig
 
 ---
 
-# 5. Google Colab
+# 5. Entwicklungsumgebungen
 
-Google Colab ist die Entwicklungsumgebung für die Vorlesung -- eine von Google bereitgestellte Plattform für Jupyter Notebooks.
+Wir arbeiten mit zwei Werkzeugen: **Google Colab** und **Visual Studio Code (VSCode)**.
+
+- **In der Klausur steht nur VSCode zur Verfügung** -- kein Colab
+- Anleitungen für beide Tools im **Moodle** verfügbar
+- **Empfehlung:** VSCode auf dem eigenen Rechner installieren (inkl. Python)
+- In der **Übung** kann ich bei der Einrichtung von VSCode auf privaten Rechnern unterstützen
+- Wer VSCode nicht auf dem eigenen Rechner nutzen möchte $\rightarrow$ Google Colab verwenden
+- Funktioniert auch auf Tablets -- aber mit Einschränkungen
+- **Nutzung eines Laptops wird dringend empfohlen**
+
+---
+
+# 5. Entwicklungsumgebungen: Google Colab
+
+Google Colab ist eine von Google bereitgestellte Plattform für Jupyter Notebooks.
 
 - **Google Account** erforderlich
 - Notebooks-Link über **Moodle** verfügbar
@@ -146,10 +165,24 @@ Google Colab ist die Entwicklungsumgebung für die Vorlesung -- eine von Google 
 
 ---
 
+# 5. Entwicklungsumgebungen: Visual Studio Code
+
+VSCode ist ein kostenloser, quelloffener Code-Editor von Microsoft.
+
+- Auf den **Laborrechnern der HTW** bereits installiert
+- Für alle gängigen Betriebssysteme verfügbar (Windows, macOS, Linux)
+- Python-Unterstützung über **Extensions** (z.B. Python, Jupyter)
+- Integriertes Terminal, Debugger und Dateiverwaltung
+- Wird in der **Klausur** als Editor verwendet
+
+> VSCode ist eine vollwertige IDE -- ideal für die Arbeit mit Python-Skripten und Notebooks.
+
+---
+
 # 6. Klausurhinweise: Allgemein
 
 - Informatik 1 Note geht **nicht** in die Abschlussnote ein
-- eKlausur im Computerlabor
+- eKlausur im Computerlabor mit **VSCode** als Editor (kein Colab)
 - Hilfsmittel: **Python und SQL Cheat Sheet** (sonst nichts erlaubt)
 - Kein Hin- und Herwechseln zwischen Klausurfragen
 - Grobe Themeneingrenzung am Semesterende
@@ -271,9 +304,9 @@ PRINT list
 - **Klausur** als eKlausur im Computerlabor, Bestehen ab 50%
 - **Prüfungszulassung** durch Wiederholungsfragen (80% der Tests bestehen)
 - **Programmieraufgaben** machen ca. 50% der Klausur aus (NEU!)
-- **Google Colab** ist die Entwicklungsumgebung
+- **Google Colab und VSCode** als Entwicklungsumgebungen -- in der Klausur nur VSCode
 - **Aktive Teilnahme** ist der beste Weg zum Bestehen
 
 ## Nächster Schritt
 
-$\rightarrow$ Google Colab einrichten und erstes Notebook öffnen
+$\rightarrow$ Entwicklungsumgebung einrichten (VSCode oder Google Colab) und erstes Notebook öffnen

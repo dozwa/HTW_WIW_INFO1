@@ -2,27 +2,29 @@
 title: "Informatik 1: Problemlösung"
 subtitle: "Wirtschaftsingenieurwesen Bachelor"
 author: "HTW Berlin -- Wirtschaftsingenieurwesen"
-date: "WiSe 2025-26"
+date: "SoSe 2026"
 header-includes:
   - \usepackage{etoolbox}
+  - \usepackage{tcolorbox}
   - |
     \AtBeginEnvironment{longtable}{\footnotesize}
     \renewcommand{\arraystretch}{1.15}
+    \renewenvironment{quote}
+      {\begin{tcolorbox}[colback=gray!10, colframe=gray!50, left=4pt, right=4pt, top=2pt, bottom=2pt, arc=0pt]}
+      {\end{tcolorbox}}
 ---
 
 # Agenda
 
-1. Einsatz generativer KI Tools
-2. EVA Prinzip
-3. Daten-Informationen-Wissen
-4. Problemlösungsprozess nach Haberfellner
-5. Programmierprozess -- Haberfellner in der Praxis
+1. EVA Prinzip
+2. Daten-Informationen-Wissen
+3. Problemlösungsprozess nach Haberfellner
+4. Programmierprozess -- Haberfellner in der Praxis
 
 ---
 
 # TL;DL -- Kurzfassung
 
-- **Generative KI:** Nutzen Sie KI-Tools, um Verständnis zu vertiefen -- nicht um Lösungen zu generieren
 - **Daten-Informationen-Wissen:** Daten sind Werte, Informationen sind Daten mit Kontext, Wissen ist Informationen mit Interpretation
 - **EVA-Prinzip:** Eingabe, Verarbeitung, Ausgabe -- das Grundmuster jedes Informationssystems
 - **Haberfellner:** Strukturierter Problemlösungsprozess -- auch direkt beim Programmieren anwendbar
@@ -45,87 +47,12 @@ header-includes:
 
 ---
 
-# 1. Generative KI-Tools: Chancen
-
-## Studie Dell'Acqua et al. (2023, Harvard Business School)
-
-- 750 Berater im Beratungskontext untersucht
-- **Bis zu 25% schneller** (Produktivitätssteigerung)
-- **Bis zu 40% besser** (Qualitätssteigerung)
-- Berater mit durchschnittlichen Leistungen profitieren besonders stark (43% vs 17%)
-
-> GenKI kann Produktivität und Qualität steigern -- aber die Effekte hängen vom Einsatzkontext ab.
-
----
-
-# 1. Generative KI-Tools: Forschung
-
-## LLMs im Requirements Engineering (SIENA, Zwanzig/Dietrich 2023)
-
-- GPT-3.5 und GPT-4 zur Extraktion von Nutzeranforderungen aus Interviews
-- Fallstudie in der Physiotherapie
-- Sensitivität: GPT-3.5 ca. 71%, GPT-4 ca. 73%
-- Modelle konnten sogar neue, vorher unbekannte Anforderungen identifizieren
-
----
-
-# 1. Generative KI-Tools: Effekte auf den Lernerfolg
-
-## Ergebnisse aus 10 Studien
-
-1. **Erklärende Nutzung** (z.B. Konzepte erklären lassen): positive Lerneffekte (+12,5 Punkte, +6,8% Examensanstieg)
-2. **Lösungsorientierte Nutzung** (z.B. Codegenerierung): teilweise negative Effekte (signifikante negative Korrelation)
-3. Effekte hängen von Promptqualität, Nutzungshäufigkeit und didaktischem Kontext ab
-
-> Gezielter Einsatz als Erklärhilfe verbessert Lernleistungen. Übermäßige Nutzung zur direkten Problemlösung kann schaden.
-
----
-
-# Aufgabe: KI im Studium
-
-Diskutiert in der Gruppe oder mit ChatGPT/Gemini/Claude:
-
-**Sollte man ChatGPT zum Lernen im Grundlagenmodul Informatik einsetzen?**
-
-- Was spricht dafür?
-- Was spricht dagegen?
-- Gibt es ein sinnvolles "Wie?"
-
----
-
-# 1. Generative KI-Tools: Regeln in diesem Kurs
-
-- Verwenden Sie KI-Tools wie ChatGPT für Ihr Studium
-- Kritische Auseinandersetzung mit Ergebnissen zwingend notwendig
-- **Angabe** welche Tools, wo und wie eingesetzt wurden
-- Nicht-Nennung = **Plagiat**
-
-> **Die Lösung Ihrer Übungsaufgaben muss eigenständig erfolgen! GenKI-Einsatz zur Erstellung der Lösung ist unzulässig und wird als Plagiat gewertet.**
-
-Geeignete Nutzung: "Erkläre mir Funktion A" oder "Warum bekomme ich diesen Fehler?"
-
----
-
-# 1. Generative KI-Tools: Google Colab
-
-## KI-Funktionen in Google Colab
-
-- **Code generieren:** Prompt beschreibt die Aufgabe, KI erzeugt Code
-- **Code korrigieren:** Automatische Fehlerbereinigung
-
-## Empfehlung
-
-- "Code generieren" nur in Ausnahmefällen nutzen (z.B. alternative Lösungen suchen)
-- Generierte Ergebnisse mit großer Aufmerksamkeit prüfen
-
----
-
-# 2. EVA-Prinzip: Computersystem
+# 1. EVA-Prinzip: Computersystem
 
 > **E**ingabe $\rightarrow$ **V**erarbeitung $\rightarrow$ **A**usgabe
 
 | Komponente | Beispiele |
-|------------|-----------|
+|------------|-------------------------------|
 | **Eingabe** | Tastatur, Maus, Touchpad, Scanner |
 | **Verarbeitung** | CPU, Chipsatz, Controller |
 | **Ausgabe** | Monitor, Lautsprecher, Drucker |
@@ -133,35 +60,35 @@ Geeignete Nutzung: "Erkläre mir Funktion A" oder "Warum bekomme ich diesen Fehl
 
 ---
 
-# 2. EVA-Prinzip: Programm/Prozess
+# 1. EVA-Prinzip: Programm/Prozess
 
 > Input $\rightarrow$ Blackbox (Verarbeitung) $\rightarrow$ Output
 
 ## Beispiel: OEE-Berechnung
 
 | Schritt | Inhalt |
-|---------|--------|
+|---------|----------------------------------------------|
 | **Eingabe** | Rohdaten aus Produktionssimulation (Logdateien) |
 | **Verarbeitung** | Berechnung in Excel/Python |
 | **Ausgabe** | Verfügbarkeit 0,646 / Leistung 0,849 / Qualität 0,959 / OEE 52,6% |
 
 ---
 
-# 3. Daten, Information, Wissen
+# 2. Daten, Information, Wissen
 
 ## Drei Ebenen
 
 | Ebene | Beschreibung | Beispiel |
-|-------|-------------|----------|
+|-|-|--|
 | **Daten** (Syntaktik) | Zeichen + Syntax | 181 |
 | **Information** (Semantik) | Daten + Bedeutung | 181 cm ist die Größe von Herrn Mustermann |
 | **Wissen** (Pragmatik) | Information + Kontext | Durchschnittsgröße zur Parkbank-Konstruktion |
 
-> Daten sind Rohwerte. Information entsteht durch Interpretation. Wissen entsteht durch Anwendung.
+Daten sind Rohwerte. Information entsteht durch Interpretation. Wissen entsteht durch Anwendung.
 
 ---
 
-# 3. Daten vs. Information: ISO-Norm
+# 2. Daten vs. Information: ISO-Norm
 
 ## ISO IEC 2382-1 (1993)
 
@@ -173,7 +100,7 @@ Geeignete Nutzung: "Erkläre mir Funktion A" oder "Warum bekomme ich diesen Fehl
 
 ---
 
-# 3. Daten-Information-Wissen: Stufenmodell
+# 2. Daten-Information-Wissen: Stufenmodell
 
 ## Aufsteigende Veredelung
 
@@ -187,14 +114,14 @@ Geeignete Nutzung: "Erkläre mir Funktion A" oder "Warum bekomme ich diesen Fehl
 
 ---
 
-# 3. Wissenstreppe nach North
+# 2. Wissenstreppe nach North
 
 ## Von Zeichen zur Wettbewerbsfähigkeit
 
 Zeichen $\rightarrow$ (+Syntax) **Daten** $\rightarrow$ (+Bedeutung) **Informationen** $\rightarrow$ (+Vernetzung) **Wissen** $\rightarrow$ (+Anwendung) **Handeln** $\rightarrow$ (+richtig handeln) **Kompetenz** $\rightarrow$ (+Einzigartigkeit) **Wettbewerbsfähigkeit**
 
 | Bereich | Umfang |
-|---------|--------|
+|---------------|-------------------------------|
 | Informationsmanagement | Zeichen bis Informationen |
 | Wissensmanagement | Wissen bis Wettbewerbsfähigkeit |
 | Explizites Wissen | Kodifizierbar, teilbar |
@@ -202,7 +129,7 @@ Zeichen $\rightarrow$ (+Syntax) **Daten** $\rightarrow$ (+Bedeutung) **Informati
 
 ---
 
-# 4. Haberfellner: Überblick
+# 3. Haberfellner: Überblick
 
 ## Problemlösungsprozess (Mikrologik)
 
@@ -218,7 +145,7 @@ Zeichen $\rightarrow$ (+Syntax) **Daten** $\rightarrow$ (+Bedeutung) **Informati
 
 ---
 
-# 4. Haberfellner: Zielsuche
+# 3. Haberfellner: Zielsuche
 
 ## Situationsanalyse
 
@@ -235,7 +162,7 @@ Zeichen $\rightarrow$ (+Syntax) **Daten** $\rightarrow$ (+Bedeutung) **Informati
 
 ---
 
-# 4. Haberfellner: Lösungssuche
+# 3. Haberfellner: Lösungssuche
 
 ## Synthese von Lösungen
 
@@ -250,7 +177,7 @@ Zeichen $\rightarrow$ (+Syntax) **Daten** $\rightarrow$ (+Bedeutung) **Informati
 
 ---
 
-# 4. Haberfellner: Auswahl und Ergebnis
+# 3. Haberfellner: Auswahl und Ergebnis
 
 ## Bewertung
 
@@ -276,7 +203,7 @@ Zeichen $\rightarrow$ (+Syntax) **Daten** $\rightarrow$ (+Bedeutung) **Informati
 
 ---
 
-# 5. Programmierprozess: Warum?
+# 4. Programmierprozess: Warum?
 
 ## Häufige Anfängerfehler
 
@@ -285,26 +212,19 @@ Zeichen $\rightarrow$ (+Syntax) **Daten** $\rightarrow$ (+Bedeutung) **Informati
 - Keine Testfälle -- "läuft irgendwie" reicht nicht
 - Bei Fehlern alles löschen und von vorne anfangen
 
-> **Programmieren ist Problemlösen.** Haberfellner funktioniert auch hier -- wir müssen ihn nur übersetzen.
+**Programmieren ist Problemlösen.** Haberfellner funktioniert auch hier -- wir müssen ihn nur übersetzen.
 
 ---
 
-# 5. Programmierprozess: Überblick
+# 4. Programmierprozess: Überblick
 
 ## Von Haberfellner zum Code in 6 Schritten
 
-| Haberfellner | Programmierschritt |
-|--------------|--------------------|
-| Anstoß | 1. Aufgabe verstehen |
-| Zielsuche | 2. Beispiel von Hand lösen |
-| Zielsuche | 3. Schritte aufschreiben |
-| Lösungssuche | 4. Verallgemeinern |
-| Lösungssuche | 5. In Code übersetzen |
-| Auswahl/Ergebnis | 6. Testen und Debuggen |
+![Programmierprozess](Grafiken/01_problemloesung_programmierprozess.png){width=95%}
 
 ---
 
-# 5. Schritt 1: Aufgabe verstehen
+# 4. Schritt 1: Aufgabe verstehen
 
 ## Haberfellner: Anstoß + Situationsanalyse
 
@@ -315,11 +235,11 @@ Zeichen $\rightarrow$ (+Syntax) **Daten** $\rightarrow$ (+Bedeutung) **Informati
   - Was ist die **Ausgabe**? (Was soll am Ende rauskommen?)
   - Was passiert bei der **Verarbeitung**? (Welche Regeln/Berechnungen?)
 
-> Wer die Aufgabe nicht erklären kann, kann sie auch nicht programmieren.
+Wer die Aufgabe nicht erklären kann, kann sie auch nicht programmieren.
 
 ---
 
-# 5. Schritt 2: Beispiel von Hand lösen
+# 4. Schritt 2: Beispiel von Hand lösen
 
 ## Haberfellner: Zielsuche
 
@@ -335,13 +255,18 @@ Zeichen $\rightarrow$ (+Syntax) **Daten** $\rightarrow$ (+Bedeutung) **Informati
 
 ---
 
-# 5. Schritt 3: Schritte aufschreiben
+# 4. Schritt 3: Schritte aufschreiben
 
 ## Haberfellner: Zielformulierung
 
 Frage: **Was habe ich gerade getan?** Jeden Schritt einzeln notieren.
 
-## Pseudocode für das Beispiel
+- Noch kein Python -- nur menschliche Sprache!
+- Alternativ: Ablaufdiagramm zeichnen (UML)
+
+---
+
+# 4. Schritt 3: Pseudocode-Beispiel
 
 ```
 Nimm eine Zahl entgegen
@@ -352,12 +277,11 @@ Sonst:
     Gib "ungerade" zurück
 ```
 
-- Noch kein Python -- nur menschliche Sprache!
-- Alternativ: Ablaufdiagramm zeichnen (UML)
+Pseudocode beschreibt die Logik -- die Programmiersprache kommt später.
 
 ---
 
-# 5. Schritt 4: Verallgemeinern
+# 4. Schritt 4: Verallgemeinern
 
 ## Haberfellner: Synthese von Lösungen
 
@@ -376,7 +300,7 @@ Sonst:
 
 ---
 
-# 5. Schritt 5: In Code übersetzen
+# 4. Schritt 5: In Code übersetzen
 
 ## Haberfellner: Lösungssuche $\rightarrow$ Umsetzung
 
@@ -390,19 +314,23 @@ def ist_gerade(zahl):
         return "ungerade"
 ```
 
-## Tipps
+---
 
-- **Eine Zeile Pseudocode = eine Zeile Code** (ungefähr)
-- Wenn eine Zeile nicht übersetzbar ist $\rightarrow$ Pseudocode verfeinern
-- Nicht alles auf einmal -- Funktion für Funktion
+# 4. Schritt 5: Tipps zur Übersetzung
+
+**Eine Zeile Pseudocode = eine Zeile Code** (ungefähr). Wenn eine Zeile nicht übersetzbar ist $\rightarrow$ Pseudocode verfeinern.
+
+**Nicht alles auf einmal** -- Funktion für Funktion entwickeln und testen.
+
+Erst Pseudocode schreiben, dann übersetzen. Nie direkt drauflos programmieren.
 
 ---
 
-# 5. Schritt 6: Testen und Debuggen
+# 4. Schritt 6: Testen
 
 ## Haberfellner: Auswahl + Ergebnis
 
-Die Testfälle aus Schritt 2 verwenden:
+**Testfälle aus Schritt 2 verwenden** und Ergebnisse mit Erwartungen abgleichen:
 
 ```python
 print(ist_gerade(4))   # erwartet: "gerade"
@@ -410,7 +338,13 @@ print(ist_gerade(7))   # erwartet: "ungerade"
 print(ist_gerade(0))   # erwartet: "gerade"
 ```
 
-## Bei Fehlern: Systematisch debuggen
+**Stimmt das Ergebnis nicht?** $\rightarrow$ Systematisch debuggen (siehe nächste Folie)
+
+---
+
+# 4. Schritt 6: Debuggen
+
+## Bei Fehlern: Systematisch vorgehen
 
 1. **Fehlermeldung lesen** -- Was sagt Python?
 2. **Eingabe prüfen** -- Stimmen die Testdaten?
@@ -419,9 +353,9 @@ print(ist_gerade(0))   # erwartet: "gerade"
 
 ---
 
-# 5. Der Prozess im Überblick
+# 4. Der Prozess im Überblick
 
-> **Erst denken, dann tippen.** Die meiste Arbeit passiert *vor* dem Code.
+**Erst denken, dann tippen.** Die meiste Arbeit passiert *vor* dem Code.
 
 1. **Verstehen** -- Aufgabe lesen, EVA identifizieren
 2. **Beispiel** -- Konkreten Fall von Hand lösen
@@ -434,10 +368,10 @@ Inspiriert von Polya (1945) und dem "Seven Steps"-Ansatz (Duke University, Hilto
 
 ---
 
-# 5. Häufige Fehler und Tipps
+# 4. Häufige Fehler und Tipps
 
 | Fehler | Besser |
-|--------|--------|
+|---------------------|---------------------------------------------|
 | Sofort Code schreiben | Erst Pseudocode, dann Code |
 | "Läuft irgendwie" | Mit Testfällen aus Schritt 2 prüfen |
 | Alles in eine Funktion | Teilprobleme einzeln lösen |
@@ -449,7 +383,6 @@ Inspiriert von Polya (1945) und dem "Seven Steps"-Ansatz (Duke University, Hilto
 
 # Zusammenfassung
 
-- **GenKI:** Als Erklärhilfe nutzen, nicht als Lösungsgenerator. Nutzung angeben!
 - **EVA:** Eingabe $\rightarrow$ Verarbeitung $\rightarrow$ Ausgabe -- Grundmuster aller Informationssysteme
 - **Daten $\rightarrow$ Information $\rightarrow$ Wissen:** Veredelung durch Kontext und Interpretation
 - **Haberfellner:** Zielsuche $\rightarrow$ Lösungssuche $\rightarrow$ Auswahl $\rightarrow$ Ergebnis
