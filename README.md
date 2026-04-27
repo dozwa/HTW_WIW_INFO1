@@ -68,7 +68,8 @@ CC BY-SA 4.0 weitergeben.
   einfache Bearbeitung statt JSON-Wrangling (siehe Workflow unten)
 - **Übungsblätter** in [`Uebungen_src/`](Uebungen_src/) mit fertigen Pandoc-LaTeX-Headern
 - **Cheat Sheets** in [`Cheat_Sheets_src/`](Cheat_Sheets_src/) (Pandas, SQLite)
-- **Beamer-Folien** als Markdown-Quelltext in [`Praesentationen_src/`](Praesentationen_src/)
+- **Beamer-Foliensätze** in [`Praesentationen_src/`](Praesentationen_src/) — pro Foliensatz ein eigener Ordner mit `slides.md` und nummerierten Live-Demo-Beispielen (`01_*.py`, `02_*.py`)
+- **Story-Welt** in [`docs/story.md`](docs/story.md) — durchgehender Erzählfaden („Veggie Soles" Online-Shop), an dem sich Beispiele in Notebooks, Folien und Demo-Code orientieren
 - **Grafik-Generatoren** in [`Grafiken_src/`](Grafiken_src/) — matplotlib-Skripte,
   die alle Diagramme reproduzierbar erzeugen
 - **Makefile** als zentrale Build-Pipeline (PDFs + Notebooks + Grafiken)
@@ -109,11 +110,11 @@ HTW_WIW_INFO1/
 ├── Uebungen/               Übungsblätter als PDF
 ├── Cheat_Sheets_src/       Cheat-Sheet-Quellen       →  Cheat_Sheets/*.pdf
 ├── Cheat_Sheets/           Cheat Sheets als PDF
-├── Praesentationen_src/    Beamer-Folien-Quellen     →  Praesentationen/*.pdf
+├── Praesentationen_src/    Foliensatz-Ordner (slides.md + .py)  →  Praesentationen/*.pdf
 ├── Praesentationen/        Beamer-Folien als PDF
 ├── Grafiken_src/           matplotlib-Skripte        →  Grafiken/*.png
 ├── Grafiken/               Generierte PNG-Diagramme
-├── docs/                   Didaktische Spezifikation (Notebook-Struktur)
+├── docs/                   Didaktische Spezifikation + Story-Welt
 ├── Makefile                Build-Pipeline für alle Outputs
 ├── README.md               Dieses Dokument
 └── LICENSE                 CC BY-SA 4.0
@@ -169,6 +170,33 @@ Die Markdown-Quelle nutzt die MyST-Syntax mit expliziten
 `{code-cell}`-Direktiven für ausführbare Zellen. Plain ` ```python `-Blöcke
 in Markdown (z. B. innerhalb `<details>`-Lösungsboxen) bleiben Markdown
 und werden nicht versehentlich zu Code-Zellen.
+
+---
+
+## Folien-Workflow
+
+Foliensätze sind themen-spezifisch und liegen in
+[`Praesentationen_src/`](Praesentationen_src/). Pro Foliensatz ein
+Ordner — die Markdown-Quelle heißt immer `slides.md`, daneben können
+nummerierte Python-Dateien für Live-Demos liegen:
+
+```
+Praesentationen_src/
+  E1_Einfuehrung/                      ← Einleitungs-Foliensätze (E1–E3)
+    slides.md                            haben kein Notebook-Pendant
+  07_Funktionen/                       ← Themen-Foliensätze
+    slides.md                            folgen der Notebook-Numerierung
+    01_einfache_funktion.py              und referenzieren ihre Beispiele
+    02_versand_berechnen.py              direkt aus dem Foliensatz
+```
+
+Bauen mit `make folien-07` (oder `make folien-E1` etc.). Das fertige
+PDF landet als `Praesentationen/<Ordnername>.pdf`.
+
+Themen-Foliensätze sind **bewusst keine 1:1-Kopie der Notebooks**:
+sie sind knapper, visueller, konzentrieren sich auf Stichpunkte und
+Grafiken. Beispiele dürfen vom Notebook abweichen — Konsistenz ergibt
+sich über die gemeinsame Story-Welt aus [`docs/story.md`](docs/story.md).
 
 ---
 
