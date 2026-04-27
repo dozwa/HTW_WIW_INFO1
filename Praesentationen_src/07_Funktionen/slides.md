@@ -12,6 +12,12 @@ header-includes:
     \renewenvironment{quote}
       {\begin{tcolorbox}[colback=gray!10, colframe=gray!50, left=4pt, right=4pt, top=2pt, bottom=2pt, arc=0pt]}
       {\end{tcolorbox}}
+    \newenvironment{demobox}
+      {\begin{tcolorbox}[colback=blue!8, colframe=blue!55, left=4pt, right=4pt, top=2pt, bottom=2pt, arc=0pt]}
+      {\end{tcolorbox}}
+    \newenvironment{exercisebox}
+      {\begin{tcolorbox}[colback=orange!8, colframe=orange!70!black, left=4pt, right=4pt, top=2pt, bottom=2pt, arc=0pt]}
+      {\end{tcolorbox}}
 ---
 
 # Agenda
@@ -84,7 +90,9 @@ input("Name: ")           # liest Eingabe
 - In den Klammern stehen die **Argumente**
 - Manche geben einen **Rückgabewert** zurück, andere nicht
 
-> **Sofort ausprobieren:** Notebook 07, Kap. 1 -- 3 Aufgaben mit `len`, `type`, `input`
+::: exercisebox
+**✎ Sofort ausprobieren** -- Notebook 07, Kap. 1: 3 Aufgaben mit `len`, `type`, `input`
+:::
 
 ---
 
@@ -104,7 +112,9 @@ def zeige_shop_info():
 - `:` -- leitet den Funktionskörper ein
 - **Einrückung** (4 Leerzeichen) -- markiert was zur Funktion gehört
 
-> **Live-Demo:** `01_einfache_funktion.py`
+::: demobox
+**▶ Live-Demo** -- `01_einfache_funktion.py`
+:::
 
 ---
 
@@ -123,7 +133,9 @@ zeige_shop_info()                # nochmal -- kein Problem
 - **Definition** = Rezept aufschreiben
 - **Aufruf** = Rezept kochen
 
-> **Sofort ausprobieren:** Notebook 07, Kap. 2 -- `zeige_info`, `trennlinie`, `zeige_liste`
+::: exercisebox
+**✎ Sofort ausprobieren** -- Notebook 07, Kap. 2: `zeige_info`, `trennlinie`, `zeige_liste`
+:::
 
 ---
 
@@ -161,8 +173,13 @@ zeige_produkt(preis=89.95, name="Eco-Sneaker")   # auch ok
 
 > Mischung erlaubt, **aber**: positional **vor** benannt.
 
-> **Live-Demo:** `02_funktion_mit_parametern.py`  
-> **Sofort ausprobieren:** Notebook 07, Kap. 3 -- `rechne_rechteck`, `zeige_produkt`
+::: demobox
+**▶ Live-Demo** -- `02_funktion_mit_parametern.py`
+:::
+
+::: exercisebox
+**✎ Sofort ausprobieren** -- Notebook 07, Kap. 3: `rechne_rechteck`, `zeige_produkt`
+:::
 
 ---
 
@@ -188,8 +205,13 @@ versand = berechne_versand(89.95)
 gesamt = 89.95 + versand
 ```
 
-> **Live-Demo:** `03_funktion_mit_return.py`  
-> **Sofort ausprobieren:** Notebook 07, Kap. 4 -- `berechne_kreis`, `erstelle_email`
+::: demobox
+**▶ Live-Demo** -- `03_funktion_mit_return.py`
+:::
+
+::: exercisebox
+**✎ Sofort ausprobieren** -- Notebook 07, Kap. 4: `berechne_kreis`, `erstelle_email`
+:::
 
 ---
 
@@ -211,8 +233,13 @@ n, total = warenkorb_zusammenfassung(artikel_preise)
 print(f"{n} Artikel, gesamt {total:.2f} EUR")
 ```
 
-> **Live-Demo:** `04_mehrere_rueckgaben.py`  
-> **Sofort ausprobieren:** Notebook 07, Kap. 4 -- `analysiere_wort`
+::: demobox
+**▶ Live-Demo** -- `04_mehrere_rueckgaben.py`
+:::
+
+::: exercisebox
+**✎ Sofort ausprobieren** -- Notebook 07, Kap. 4: `analysiere_wort`
+:::
 
 ---
 
@@ -237,8 +264,13 @@ def versand_anzeigen():
     print(f"Versand: {VERSANDPAUSCHALE} EUR")
 ```
 
-> **Live-Demo:** `05_scope_demo.py`  
-> **Sofort ausprobieren:** Notebook 07, Trainingsmaterial Aufg. 9 -- "Scope verstehen"
+::: demobox
+**▶ Live-Demo** -- `05_scope_demo.py`
+:::
+
+::: exercisebox
+**✎ Sofort ausprobieren** -- Notebook 07, Trainingsmaterial Aufg. 9 ("Scope verstehen")
+:::
 
 ---
 
@@ -282,7 +314,9 @@ def darf_rabatt_bekommen(kunde, bestellsumme):
 ✓ Mehrere Rückgabewerte ausgepackt  
 ✓ Scope: lokal vs. global unterschieden  
 
-> **Zur Vertiefung im Notebook 07:**
-> 
-> - "Sofort ausprobieren"-Aufgaben in Kap. 1-4 (sind Sie schon mitgegangen)
-> - Trainingsmaterial am Ende: 9 Aufgaben in drei Schwierigkeitsstufen (einfach, mittel, Herausforderung)
+::: exercisebox
+**✎ Zur Vertiefung im Notebook 07:**
+
+- "Sofort ausprobieren"-Aufgaben in Kap. 1-4 (sind Sie schon mitgegangen)
+- Trainingsmaterial am Ende: 9 Aufgaben in drei Schwierigkeitsstufen (einfach, mittel, Herausforderung)
+:::

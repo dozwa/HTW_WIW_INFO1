@@ -49,7 +49,8 @@ RESOURCE_PATH  = --resource-path=".:$(GRAFIK_OUT)"
 BEAMER_OPTS    = -t beamer \
   -V theme:metropolis -V fontsize:11pt -V aspectratio:169 \
   -V mainfont:"DejaVu Sans" -V sansfont:"DejaVu Sans" \
-  -V monofont:"DejaVu Sans Mono"
+  -V monofont:"DejaVu Sans Mono" \
+  --lua-filter=tools/box_classes.lua
 
 # ============================================================================
 # Targets
