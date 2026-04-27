@@ -25,6 +25,8 @@ header-includes:
 
 > **Lernziel**: Eigene Funktionen schreiben, die unseren Veggie-Soles-Shop strukturieren.
 
+> **Wie wir heute arbeiten**: Nach jedem Konzept zeigt die Folie *Live-Demo* (ich im Terminal) und *Sofort ausprobieren* (Sie im Notebook 07).
+
 ---
 
 # Wozu Funktionen?
@@ -82,6 +84,8 @@ input("Name: ")           # liest Eingabe
 - In den Klammern stehen die **Argumente**
 - Manche geben einen **Rückgabewert** zurück, andere nicht
 
+> **Sofort ausprobieren:** Notebook 07, Kap. 1 -- 3 Aufgaben mit `len`, `type`, `input`
+
 ---
 
 # Anatomie: `def`-Syntax
@@ -119,6 +123,8 @@ zeige_shop_info()                # nochmal -- kein Problem
 - **Definition** = Rezept aufschreiben
 - **Aufruf** = Rezept kochen
 
+> **Sofort ausprobieren:** Notebook 07, Kap. 2 -- `zeige_info`, `trennlinie`, `zeige_liste`
+
 ---
 
 # Parameter -- die Stellschrauben
@@ -155,7 +161,8 @@ zeige_produkt(preis=89.95, name="Eco-Sneaker")   # auch ok
 
 > Mischung erlaubt, **aber**: positional **vor** benannt.
 
-> **Live-Demo:** `02_funktion_mit_parametern.py`
+> **Live-Demo:** `02_funktion_mit_parametern.py`  
+> **Sofort ausprobieren:** Notebook 07, Kap. 3 -- `rechne_rechteck`, `zeige_produkt`
 
 ---
 
@@ -181,7 +188,8 @@ versand = berechne_versand(89.95)
 gesamt = 89.95 + versand
 ```
 
-> **Live-Demo:** `03_funktion_mit_return.py`
+> **Live-Demo:** `03_funktion_mit_return.py`  
+> **Sofort ausprobieren:** Notebook 07, Kap. 4 -- `berechne_kreis`, `erstelle_email`
 
 ---
 
@@ -203,7 +211,8 @@ n, total = warenkorb_zusammenfassung(artikel_preise)
 print(f"{n} Artikel, gesamt {total:.2f} EUR")
 ```
 
-> **Live-Demo:** `04_mehrere_rueckgaben.py`
+> **Live-Demo:** `04_mehrere_rueckgaben.py`  
+> **Sofort ausprobieren:** Notebook 07, Kap. 4 -- `analysiere_wort`
 
 ---
 
@@ -228,7 +237,8 @@ def versand_anzeigen():
     print(f"Versand: {VERSANDPAUSCHALE} EUR")
 ```
 
-> **Live-Demo:** `05_scope_demo.py`
+> **Live-Demo:** `05_scope_demo.py`  
+> **Sofort ausprobieren:** Notebook 07, Trainingsmaterial Aufg. 9 -- "Scope verstehen"
 
 ---
 
@@ -272,5 +282,7 @@ def darf_rabatt_bekommen(kunde, bestellsumme):
 ✓ Mehrere Rückgabewerte ausgepackt  
 ✓ Scope: lokal vs. global unterschieden  
 
-> Übungen im Notebook 07 vertiefen alles.  
-> Trainingsmaterial: 9 Aufgaben in drei Schwierigkeitsstufen.
+> **Zur Vertiefung im Notebook 07:**
+> 
+> - "Sofort ausprobieren"-Aufgaben in Kap. 1-4 (sind Sie schon mitgegangen)
+> - Trainingsmaterial am Ende: 9 Aufgaben in drei Schwierigkeitsstufen (einfach, mittel, Herausforderung)
