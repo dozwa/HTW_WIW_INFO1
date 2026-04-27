@@ -1,15 +1,24 @@
+# macOS
+.DS_Store
+
+# Editor / Tooling
 .claude/
+.idea/
+.vscode/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Lokale, nicht-öffentliche Inhalte (Hochschul-intern, Recherchen, Drafts)
 CLAUDE.md
 QM-V01-Folien.md
 *_Referenz.md
-META_Notebook_Struktur.md
 Recherchen/
 Sprecherskripte/
-Makefile
-Grafiken/
-*.md
-Präsentationen/*.md
 
-# Notebook-Quellen (MyST-Markdown) sind versionierte Quelle, kein Output
-!Notebooks_src/
-!Notebooks_src/*.md
+# Jupyter
+.ipynb_checkpoints/
