@@ -201,6 +201,18 @@ sie sind knapper, visueller, konzentrieren sich auf Stichpunkte und
 Grafiken. Beispiele dürfen vom Notebook abweichen — Konsistenz ergibt
 sich über die gemeinsame Story-Welt aus [`docs/story.md`](docs/story.md).
 
+### Drei Box-Stile auf den Folien
+
+Auf den Folien werden drei Arten von Hinweisen visuell unterschieden:
+
+| Markierung | Stil | Zweck |
+|---|---|---|
+| `> Merksatz` (Blockquote) | grau | Wichtige Erkenntnis für alle |
+| `::: demobox` | blau | **Anweisung an Lecturer** — jetzt im Terminal/VSCode demonstrieren |
+| `::: exercisebox` | orange | **Anweisung an Studierende** — jetzt im Notebook üben |
+
+Die Box-Stile werden via [`tools/box_classes.lua`](tools/box_classes.lua) als Pandoc-Lua-Filter erzeugt; die Farben sind im YAML-Header der jeweiligen `slides.md` als `tcolorbox`-Environments definiert. Beispiel: [`Praesentationen_src/07_Funktionen/slides.md`](Praesentationen_src/07_Funktionen/slides.md).
+
 ---
 
 ## Lizenz
