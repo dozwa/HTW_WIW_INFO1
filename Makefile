@@ -31,14 +31,15 @@ NOTEBOOK_OUT    = Notebooks
 # --- Quellen finden ---------------------------------------------------------
 UEBUNGEN_MD    := $(wildcard $(UEBUNG_SRC)/*.md)
 CHEATSHEET_MD  := $(wildcard $(CHEAT_SRC)/*.md)
-BEAMER_MD      := $(wildcard $(BEAMER_SRC)/*.md)
+# Folien: ein Ordner pro Foliensatz, slides.md als Quelle, ggf. .py-Beispiele daneben
+BEAMER_SOURCES := $(wildcard $(BEAMER_SRC)/*/slides.md)
 NOTEBOOK_MD    := $(wildcard $(NOTEBOOK_SRC)/*.md)
 GRAFIK_SCRIPTS := $(wildcard $(GRAFIK_SRC)/generate_*.py)
 
 # --- Ziele ableiten ---------------------------------------------------------
 UEBUNGEN_PDF   := $(patsubst $(UEBUNG_SRC)/%.md,$(UEBUNG_OUT)/%.pdf,$(UEBUNGEN_MD))
 CHEATSHEET_PDF := $(patsubst $(CHEAT_SRC)/%.md,$(CHEAT_OUT)/%.pdf,$(CHEATSHEET_MD))
-BEAMER_PDF     := $(patsubst $(BEAMER_SRC)/%.md,$(BEAMER_OUT)/%.pdf,$(BEAMER_MD))
+BEAMER_PDF     := $(patsubst $(BEAMER_SRC)/%/slides.md,$(BEAMER_OUT)/%.pdf,$(BEAMER_SOURCES))
 NOTEBOOK_IPYNB := $(patsubst $(NOTEBOOK_SRC)/%.md,$(NOTEBOOK_OUT)/%.ipynb,$(NOTEBOOK_MD))
 
 # --- Pandoc-Optionen --------------------------------------------------------
@@ -88,7 +89,7 @@ $(CHEAT_OUT)/%.pdf: $(CHEAT_SRC)/%.md
 	@echo "→ Baue (Cheat Sheet): $<"
 	$(PANDOC) $(PANDOC_COMMON) $(RESOURCE_PATH) -o "$@" "$<"
 
-$(BEAMER_OUT)/%.pdf: $(BEAMER_SRC)/%.md
+$(BEAMER_OUT)/%.pdf: $(BEAMER_SRC)/%/slides.md
 	@echo "→ Baue (Beamer): $<"
 	$(PANDOC) $(PANDOC_COMMON) $(BEAMER_OPTS) $(RESOURCE_PATH) -o "$@" "$<"
 
@@ -115,9 +116,10 @@ cheatsheet-%:
 	else echo "Kein Cheat Sheet mit '$*' gefunden."; fi
 
 folien-%:
-	@src=$$(find $(BEAMER_SRC) -maxdepth 1 -name '*$**.md' -type f | head -1); \
+	@src=$$(find $(BEAMER_SRC) -mindepth 2 -maxdepth 2 -path '*$**/slides.md' -type f | head -1); \
 	if [ -n "$$src" ]; then \
-		out="$(BEAMER_OUT)/$$(basename $${src%.md}).pdf"; \
+		dir=$$(basename $$(dirname $$src)); \
+		out="$(BEAMER_OUT)/$${dir}.pdf"; \
 		echo "→ Baue: $$src → $$out"; \
 		$(PANDOC) $(PANDOC_COMMON) $(BEAMER_OPTS) $(RESOURCE_PATH) -o "$$out" "$$src"; \
 	else echo "Keine Folien mit '$*' gefunden."; fi
