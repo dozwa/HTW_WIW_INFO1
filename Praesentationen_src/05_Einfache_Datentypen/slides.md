@@ -10,13 +10,13 @@ header-includes:
     \AtBeginEnvironment{longtable}{\footnotesize}
     \renewcommand{\arraystretch}{1.15}
     \renewenvironment{quote}
-      {\begin{tcolorbox}[colback=gray!10, colframe=gray!50, left=4pt, right=4pt, top=2pt, bottom=2pt, arc=0pt]}
+      {\begin{tcolorbox}[colback=gray!10, colframe=gray!50, left=4pt, right=4pt, top=2pt, bottom=2pt, arc=0pt, fontupper=\small]}
       {\end{tcolorbox}}
     \newenvironment{demobox}
-      {\begin{tcolorbox}[colback=blue!8, colframe=blue!55, left=4pt, right=4pt, top=2pt, bottom=2pt, arc=0pt]}
+      {\begin{tcolorbox}[colback=blue!8, colframe=blue!55, left=4pt, right=4pt, top=2pt, bottom=2pt, arc=0pt, fontupper=\small]}
       {\end{tcolorbox}}
     \newenvironment{exercisebox}
-      {\begin{tcolorbox}[colback=orange!8, colframe=orange!70!black, left=4pt, right=4pt, top=2pt, bottom=2pt, arc=0pt]}
+      {\begin{tcolorbox}[colback=orange!8, colframe=orange!70!black, left=4pt, right=4pt, top=2pt, bottom=2pt, arc=0pt, fontupper=\small]}
       {\end{tcolorbox}}
 ---
 
@@ -65,22 +65,14 @@ print(type(True))     # <class 'bool'>
 # String -- Text (`str`)
 
 ```python
-produkt   = "Eco-Sneaker"
-beschreibung = 'Klassischer Low-Cut'
-mehrzeilig = """Vegane Sneaker
-fair produziert"""
-```
+produkt = "Eco-Sneaker"           # doppelte oder
+beschr  = 'Klassischer Low-Cut'   # einfache Anführungszeichen
+text    = """zwei
+Zeilen"""                          # dreifach für mehrzeilig
 
-- Mit **doppelten** oder **einfachen** Anführungszeichen
-- **Dreifach** für mehrzeiligen Text
-- Aneinanderhängen mit `+`
-- Vervielfältigen mit `*`
-- Länge mit `len(...)`
-
-```python
-print(produkt + " kostet 89.95 EUR")
-print("=" * 30)              # 30 Gleichheitszeichen
-print(len(produkt))          # 11
+produkt + " kostet 89.95 EUR"     # mit + verbinden
+"=" * 30                           # mit * vervielfältigen
+len(produkt)                       # 11 Zeichen
 ```
 
 ::: demobox
@@ -195,11 +187,8 @@ print("Eco" in "Eco-Sneaker") # True
 Python wandelt **nicht automatisch** zwischen `str` und Zahl:
 
 ```python
-input_text = input("Anzahl: ")     # input liefert IMMER str
-anzahl = int(input_text)            # → in int wandeln
-
-preis = 89.95
-print("Preis: " + str(preis) + " EUR")   # float → str
+anzahl = int(input("Anzahl: "))     # str → int
+text = "Preis: " + str(89.95)       # float → str
 ```
 
 | Funktion | Wandelt nach |

@@ -10,7 +10,7 @@ header-includes:
     \AtBeginEnvironment{longtable}{\footnotesize}
     \renewcommand{\arraystretch}{1.15}
     \renewenvironment{quote}
-      {\begin{tcolorbox}[colback=gray!10, colframe=gray!50, left=4pt, right=4pt, top=2pt, bottom=2pt, arc=0pt]}
+      {\begin{tcolorbox}[colback=gray!10, colframe=gray!50, left=4pt, right=4pt, top=2pt, bottom=2pt, arc=0pt, fontupper=\small]}
       {\end{tcolorbox}}
 ---
 
