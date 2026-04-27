@@ -9,3 +9,7 @@ Makefile
 Grafiken/
 *.md
 Präsentationen/*.md
+
+# Notebook-Quellen (MyST-Markdown) sind versionierte Quelle, kein Output
+!Notebooks_src/
+!Notebooks_src/*.md
