@@ -66,10 +66,10 @@ CC BY-SA 4.0 weitergeben.
   (Willkommen → Lernziele → Kernkonzepte → Übungen → Musterlösungen)
 - **Markdown-Quelltexte** unter [`Notebooks_src/`](Notebooks_src/) für
   einfache Bearbeitung statt JSON-Wrangling (siehe Workflow unten)
-- **Übungsblätter** in [`Übungen/`](Übungen/) mit fertigen Pandoc-LaTeX-Headern
-- **Cheat Sheets** in [`Cheat_Sheets/`](Cheat_Sheets/) (Pandas, SQLite)
-- **Beamer-Folien** als Markdown-Quelltext in [`Präsentationen/`](Präsentationen/)
-- **Grafik-Generatoren** in [`Grafiken/`](Grafiken/) — matplotlib-Skripte,
+- **Übungsblätter** in [`Uebungen_src/`](Uebungen_src/) mit fertigen Pandoc-LaTeX-Headern
+- **Cheat Sheets** in [`Cheat_Sheets_src/`](Cheat_Sheets_src/) (Pandas, SQLite)
+- **Beamer-Folien** als Markdown-Quelltext in [`Praesentationen_src/`](Praesentationen_src/)
+- **Grafik-Generatoren** in [`Grafiken_src/`](Grafiken_src/) — matplotlib-Skripte,
   die alle Diagramme reproduzierbar erzeugen
 - **Makefile** als zentrale Build-Pipeline (PDFs + Notebooks + Grafiken)
 
@@ -79,33 +79,43 @@ Die didaktische Struktur ist auf **Wirtschaftsingenieurwesen**
 optimiert (Praxisszenarien aus Produktion, E-Commerce, Finanzen,
 Verwaltung). Für andere Zielgruppen lassen sich die Beispiele
 gezielt austauschen — die kanonische Notebook-Struktur ist in
-[`Notebooks/META_Notebook_Struktur.md`](Notebooks/META_Notebook_Struktur.md)
-dokumentiert (lokal, nicht im Repo) und enthält Richtwerte für
-Zellenanzahl, Markdown/Code-Verhältnis und Übungsdichte.
+[`docs/notebook_struktur.md`](docs/notebook_struktur.md)
+dokumentiert und enthält Richtwerte für Zellenanzahl,
+Markdown/Code-Verhältnis und Übungsdichte.
 
 ### Fork-Hinweise
 
 1. Repository forken oder als Template verwenden
 2. `LICENSE` beibehalten; Ihre eigene Namensnennung im Header
    ergänzen (CC BY-SA 4.0 verlangt Quellenangabe)
-3. Inhalte unter [`Notebooks_src/`](Notebooks_src/) anpassen, dann
-   `make notebooks` zum Regenerieren
-4. Eigene Übungen/Cheat Sheets im jeweiligen Verzeichnis anlegen —
-   Pandoc baut PDFs ohne weitere Konfiguration
+3. Inhalte in den `*_src/`-Verzeichnissen anpassen, dann
+   `make all` zum Regenerieren aller Outputs
+4. Eigene Übungen/Cheat Sheets/Folien im jeweiligen `*_src/`-Verzeichnis
+   anlegen — Pandoc baut PDFs ohne weitere Konfiguration
 
 ---
 
 ## Verzeichnisstruktur
 
+Quellen (`*_src/`) und generierte Outputs sind durchgängig getrennt.
+Beides ist im Repo, sodass Studierende die fertigen PDFs und Notebooks
+direkt ohne Build-Toolchain nutzen können.
+
 ```
 HTW_WIW_INFO1/
-├── Notebooks/              Generierte Jupyter-Notebooks (.ipynb)
-├── Notebooks_src/          MyST-Markdown-Quellen für Notebooks
-├── Übungen/                Übungsblätter (Markdown → PDF via Pandoc)
-├── Cheat_Sheets/           Quick-Reference-Karten (Markdown → PDF)
-├── Präsentationen/         Beamer-Folien (Markdown → PDF)
-├── Grafiken/               matplotlib/seaborn-Skripte und ihre PNG-Outputs
+├── Notebooks_src/          MyST-Markdown-Quellen     →  Notebooks/*.ipynb
+├── Notebooks/              Jupyter-Notebooks (Output für Studierende)
+├── Uebungen_src/           Übungsblatt-Quellen       →  Uebungen/*.pdf
+├── Uebungen/               Übungsblätter als PDF
+├── Cheat_Sheets_src/       Cheat-Sheet-Quellen       →  Cheat_Sheets/*.pdf
+├── Cheat_Sheets/           Cheat Sheets als PDF
+├── Praesentationen_src/    Beamer-Folien-Quellen     →  Praesentationen/*.pdf
+├── Praesentationen/        Beamer-Folien als PDF
+├── Grafiken_src/           matplotlib-Skripte        →  Grafiken/*.png
+├── Grafiken/               Generierte PNG-Diagramme
+├── docs/                   Didaktische Spezifikation (Notebook-Struktur)
 ├── Makefile                Build-Pipeline für alle Outputs
+├── README.md               Dieses Dokument
 └── LICENSE                 CC BY-SA 4.0
 ```
 
@@ -122,7 +132,7 @@ Alle Outputs (PDFs, Notebooks, Grafiken) werden zentral über das
 | `make uebungen` | Alle Übungsblätter als PDF |
 | `make cheatsheets` | Alle Cheat Sheets als PDF |
 | `make beamer` | Alle Beamer-Foliensätze als PDF |
-| `make grafiken` | Alle `Grafiken/generate_*.py`-Skripte ausführen |
+| `make grafiken` | Alle `Grafiken_src/generate_*.py`-Skripte ausführen |
 | `make notebooks` | Notebooks aus `Notebooks_src/*.md` regenerieren |
 | `make uebung-03` | Eine einzelne Übung (Treffer auf Nummer im Dateinamen) |
 | `make notebook-11` | Ein einzelnes Notebook (Treffer auf Nummer) |

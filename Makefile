@@ -1,11 +1,13 @@
 # ============================================================================
 # Makefile – HTW Berlin · Informatik 1 · WIW 1. Semester
 # ============================================================================
-# Baut PDFs aus Markdown-Quellen (Übungen, Cheat Sheets, Beamer-Folien)
-# und generiert Grafiken per Python/matplotlib.
+# Source/Output-getrennte Build-Pipeline:
 #
-# Verzeichnisse mit Umlauten/Leerzeichen werden per `find` aufgelöst
-# (macOS speichert Umlaute als NFD – GNU make wildcard findet sie nicht).
+#   Uebungen_src/*.md         →  Uebungen/*.pdf            (Pandoc Artikel)
+#   Cheat_Sheets_src/*.md     →  Cheat_Sheets/*.pdf        (Pandoc Artikel)
+#   Praesentationen_src/*.md  →  Praesentationen/*.pdf     (Pandoc Beamer)
+#   Notebooks_src/*.md        →  Notebooks/*.ipynb         (Jupytext)
+#   Grafiken_src/generate_*.py →  Grafiken/*.png           (matplotlib)
 # ============================================================================
 
 # --- Tools ------------------------------------------------------------------
@@ -15,26 +17,33 @@ PYTHON     = python3
 JUPYTEXT   = jupytext
 
 # --- Verzeichnisse ----------------------------------------------------------
-GRAFIKEN_DIR     = Grafiken
-NOTEBOOK_SRC_DIR = Notebooks_src
-NOTEBOOK_DIR     = Notebooks
+UEBUNG_SRC      = Uebungen_src
+UEBUNG_OUT      = Uebungen
+CHEAT_SRC       = Cheat_Sheets_src
+CHEAT_OUT       = Cheat_Sheets
+BEAMER_SRC      = Praesentationen_src
+BEAMER_OUT      = Praesentationen
+GRAFIK_SRC      = Grafiken_src
+GRAFIK_OUT      = Grafiken
+NOTEBOOK_SRC    = Notebooks_src
+NOTEBOOK_OUT    = Notebooks
 
-# --- Quellen finden (shell, wegen Umlaute/Leerzeichen) ----------------------
-UEBUNGEN_MD   := $(shell find . -maxdepth 2 -path '*bungen/*.md'   -type f)
-CHEATSHEET_MD := $(shell find . -maxdepth 2 -path '*Cheat*Sheets/*.md' -type f)
-BEAMER_MD     := $(shell find . -maxdepth 2 -path '*sentationen/*.md' -type f)
-GRAFIK_SCRIPTS:= $(shell find $(GRAFIKEN_DIR) -name 'generate_*.py' -type f 2>/dev/null)
-NOTEBOOK_SRC  := $(shell find $(NOTEBOOK_SRC_DIR) -maxdepth 1 -name '*.md' -type f 2>/dev/null)
+# --- Quellen finden ---------------------------------------------------------
+UEBUNGEN_MD    := $(wildcard $(UEBUNG_SRC)/*.md)
+CHEATSHEET_MD  := $(wildcard $(CHEAT_SRC)/*.md)
+BEAMER_MD      := $(wildcard $(BEAMER_SRC)/*.md)
+NOTEBOOK_MD    := $(wildcard $(NOTEBOOK_SRC)/*.md)
+GRAFIK_SCRIPTS := $(wildcard $(GRAFIK_SRC)/generate_*.py)
 
-# --- PDF-Zielpfade ----------------------------------------------------------
-UEBUNGEN_PDF   := $(UEBUNGEN_MD:.md=.pdf)
-CHEATSHEET_PDF := $(CHEATSHEET_MD:.md=.pdf)
-BEAMER_PDF     := $(BEAMER_MD:.md=.pdf)
-NOTEBOOK_IPYNB := $(patsubst $(NOTEBOOK_SRC_DIR)/%.md,$(NOTEBOOK_DIR)/%.ipynb,$(NOTEBOOK_SRC))
+# --- Ziele ableiten ---------------------------------------------------------
+UEBUNGEN_PDF   := $(patsubst $(UEBUNG_SRC)/%.md,$(UEBUNG_OUT)/%.pdf,$(UEBUNGEN_MD))
+CHEATSHEET_PDF := $(patsubst $(CHEAT_SRC)/%.md,$(CHEAT_OUT)/%.pdf,$(CHEATSHEET_MD))
+BEAMER_PDF     := $(patsubst $(BEAMER_SRC)/%.md,$(BEAMER_OUT)/%.pdf,$(BEAMER_MD))
+NOTEBOOK_IPYNB := $(patsubst $(NOTEBOOK_SRC)/%.md,$(NOTEBOOK_OUT)/%.ipynb,$(NOTEBOOK_MD))
 
 # --- Pandoc-Optionen --------------------------------------------------------
 PANDOC_COMMON  = --pdf-engine=$(PDF_ENGINE) -V lang:de-DE
-RESOURCE_PATH  = --resource-path=".:$(GRAFIKEN_DIR)"
+RESOURCE_PATH  = --resource-path=".:$(GRAFIK_OUT)"
 
 BEAMER_OPTS    = -t beamer \
   -V theme:metropolis -V fontsize:11pt -V aspectratio:169 \
@@ -45,9 +54,9 @@ BEAMER_OPTS    = -t beamer \
 # Targets
 # ============================================================================
 
-.PHONY: all uebungen cheatsheets beamer grafiken notebooks clean help
+.PHONY: all uebungen cheatsheets beamer grafiken notebooks clean clean-grafiken help
 
-all: grafiken uebungen cheatsheets beamer  ## Alles bauen
+all: grafiken uebungen cheatsheets beamer  ## Alles bauen (PDFs + Grafiken)
 
 help:  ## Verfügbare Targets anzeigen
 	@grep -E '^[a-zA-Z_-]+:.*##' $(MAKEFILE_LIST) | \
@@ -61,66 +70,62 @@ grafiken:  ## Python-Grafiken generieren
 			$(PYTHON) "$$script"; \
 		done; \
 	else \
-		echo "Keine generate_*.py Skripte in $(GRAFIKEN_DIR)/ gefunden."; \
+		echo "Keine generate_*.py Skripte in $(GRAFIK_SRC)/ gefunden."; \
 	fi
 
-# --- Übungen ----------------------------------------------------------------
-uebungen: $(UEBUNGEN_PDF)  ## Alle Übungsblätter bauen
-
-# --- Cheat Sheets -----------------------------------------------------------
+# --- Übungen / Cheat Sheets / Beamer ----------------------------------------
+uebungen:    $(UEBUNGEN_PDF)    ## Alle Übungsblätter bauen
 cheatsheets: $(CHEATSHEET_PDF)  ## Alle Cheat Sheets bauen
+beamer:      $(BEAMER_PDF)      ## Alle Beamer-Folien bauen
+notebooks:   $(NOTEBOOK_IPYNB)  ## Notebooks aus Markdown-Quellen bauen
 
-# --- Beamer-Folien ----------------------------------------------------------
-beamer: $(BEAMER_PDF)  ## Alle Beamer-Folien bauen
-
-# --- Pattern Rules ----------------------------------------------------------
-# Übungen & Cheat Sheets (Artikel-Format)
-$(UEBUNGEN_PDF) $(CHEATSHEET_PDF): %.pdf: %.md
-	@echo "→ Baue (Artikel): $<"
+# --- Pattern Rules: src → out ----------------------------------------------
+$(UEBUNG_OUT)/%.pdf: $(UEBUNG_SRC)/%.md
+	@echo "→ Baue (Übung): $<"
 	$(PANDOC) $(PANDOC_COMMON) $(RESOURCE_PATH) -o "$@" "$<"
 
-# Beamer-Folien
-$(BEAMER_PDF): %.pdf: %.md
+$(CHEAT_OUT)/%.pdf: $(CHEAT_SRC)/%.md
+	@echo "→ Baue (Cheat Sheet): $<"
+	$(PANDOC) $(PANDOC_COMMON) $(RESOURCE_PATH) -o "$@" "$<"
+
+$(BEAMER_OUT)/%.pdf: $(BEAMER_SRC)/%.md
 	@echo "→ Baue (Beamer): $<"
 	$(PANDOC) $(PANDOC_COMMON) $(BEAMER_OPTS) $(RESOURCE_PATH) -o "$@" "$<"
+
+$(NOTEBOOK_OUT)/%.ipynb: $(NOTEBOOK_SRC)/%.md
+	@echo "→ Baue Notebook: $<"
+	$(JUPYTEXT) --to ipynb --output "$@" "$<"
 
 # --- Einzelne Targets (Kurzform) --------------------------------------------
 # Bsp: make uebung-03 → baut die Übung mit 03 im Namen
 uebung-%:
-	@file=$$(find . -maxdepth 2 -path '*bungen/*$**.md' -type f | head -1); \
-	if [ -n "$$file" ]; then \
-		echo "→ Baue: $$file"; \
-		$(PANDOC) $(PANDOC_COMMON) $(RESOURCE_PATH) -o "$${file%.md}.pdf" "$$file"; \
+	@src=$$(find $(UEBUNG_SRC) -maxdepth 1 -name '*$**.md' -type f | head -1); \
+	if [ -n "$$src" ]; then \
+		out="$(UEBUNG_OUT)/$$(basename $${src%.md}).pdf"; \
+		echo "→ Baue: $$src → $$out"; \
+		$(PANDOC) $(PANDOC_COMMON) $(RESOURCE_PATH) -o "$$out" "$$src"; \
 	else echo "Keine Übung mit '$*' gefunden."; fi
 
 cheatsheet-%:
-	@file=$$(find . -maxdepth 2 -path '*Cheat*Sheets/*$**.md' -type f | head -1); \
-	if [ -n "$$file" ]; then \
-		echo "→ Baue: $$file"; \
-		$(PANDOC) $(PANDOC_COMMON) $(RESOURCE_PATH) -o "$${file%.md}.pdf" "$$file"; \
+	@src=$$(find $(CHEAT_SRC) -maxdepth 1 -name '*$**.md' -type f | head -1); \
+	if [ -n "$$src" ]; then \
+		out="$(CHEAT_OUT)/$$(basename $${src%.md}).pdf"; \
+		echo "→ Baue: $$src → $$out"; \
+		$(PANDOC) $(PANDOC_COMMON) $(RESOURCE_PATH) -o "$$out" "$$src"; \
 	else echo "Kein Cheat Sheet mit '$*' gefunden."; fi
 
 folien-%:
-	@file=$$(find . -maxdepth 2 -path '*sentationen/*$**.md' -type f | head -1); \
-	if [ -n "$$file" ]; then \
-		echo "→ Baue: $$file"; \
-		$(PANDOC) $(PANDOC_COMMON) $(BEAMER_OPTS) $(RESOURCE_PATH) -o "$${file%.md}.pdf" "$$file"; \
+	@src=$$(find $(BEAMER_SRC) -maxdepth 1 -name '*$**.md' -type f | head -1); \
+	if [ -n "$$src" ]; then \
+		out="$(BEAMER_OUT)/$$(basename $${src%.md}).pdf"; \
+		echo "→ Baue: $$src → $$out"; \
+		$(PANDOC) $(PANDOC_COMMON) $(BEAMER_OPTS) $(RESOURCE_PATH) -o "$$out" "$$src"; \
 	else echo "Keine Folien mit '$*' gefunden."; fi
 
-# --- Notebooks --------------------------------------------------------------
-# Baut Jupyter-Notebooks aus MyST-Markdown-Quellen via jupytext.
-# Einzelne Notebooks: make notebook-11  (Nummer im Dateinamen)
-# Alle migrierten:    make notebooks
-notebooks: $(NOTEBOOK_IPYNB)  ## Notebooks aus Markdown-Quellen bauen
-
-$(NOTEBOOK_DIR)/%.ipynb: $(NOTEBOOK_SRC_DIR)/%.md
-	@echo "→ Baue Notebook: $<"
-	$(JUPYTEXT) --to ipynb --output "$@" "$<"
-
 notebook-%:
-	@src=$$(find $(NOTEBOOK_SRC_DIR) -maxdepth 1 -name '*$**.md' -type f | head -1); \
+	@src=$$(find $(NOTEBOOK_SRC) -maxdepth 1 -name '*$**.md' -type f | head -1); \
 	if [ -n "$$src" ]; then \
-		out="$(NOTEBOOK_DIR)/$$(basename $${src%.md}).ipynb"; \
+		out="$(NOTEBOOK_OUT)/$$(basename $${src%.md}).ipynb"; \
 		echo "→ Baue: $$src → $$out"; \
 		$(JUPYTEXT) --to ipynb --output "$$out" "$$src"; \
 	else echo "Keine Notebook-Quelle mit '$*' gefunden."; fi
@@ -128,10 +133,10 @@ notebook-%:
 # --- Clean ------------------------------------------------------------------
 clean:  ## Alle generierten PDFs löschen
 	@echo "Lösche generierte PDFs..."
-	@find . -maxdepth 2 \( -path '*bungen/*.pdf' -o -path '*Cheat*Sheets/*.pdf' -o -path '*sentationen/*.pdf' \) -type f -delete
+	@find $(UEBUNG_OUT) $(CHEAT_OUT) $(BEAMER_OUT) -name '*.pdf' -type f -delete 2>/dev/null || true
 	@echo "Fertig."
 
 clean-grafiken:  ## Generierte Grafiken löschen
 	@echo "Lösche Grafiken..."
-	@find $(GRAFIKEN_DIR) -name '*.png' -type f -delete
+	@find $(GRAFIK_OUT) -name '*.png' -type f -delete 2>/dev/null || true
 	@echo "Fertig."
