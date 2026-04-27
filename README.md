@@ -14,16 +14,19 @@ Sprache, didaktisch auf den WIW-Kontext zugeschnitten und unter
 
 ## Inhalt & Aufbau
 
-26 Jupyter-Notebooks führen vom Einstieg bis zu SQL-Abfragen. Die
-Progression ist in fünf Phasen organisiert:
+26 Jupyter-Notebooks führen vom Einstieg bis zu SQL-Abfragen, in fünf
+Phasen organisiert. Die vollständige Themenprogression — inklusive
+Notebook-Reihenfolge und einer Tabelle, welche Python-Konzepte bis zu
+welchem Notebook eingeführt sind — steht in
+[`docs/curriculum.md`](docs/curriculum.md).
 
-| Phase | Notebooks | Themen |
-|-------|-----------|--------|
-| 1 — Python-Grundlagen | 01–06 | Einführung, Konsole, Kommentare, Variablen, einfache & komplexe Datentypen |
-| 2 — Kontrollfluss | 07–11 | Funktionen, Operatoren, Verzweigungen, Schleifen, Fehlerbehandlung |
-| 3 — Algorithmen | 12–15 | File I/O, Modellierung, Sortier- & Suchalgorithmen, Programme |
-| 4 — Datenanalyse | 16–19 | Pandas (DataFrames, Visualisierung, Statistik), Matplotlib |
-| 5 — Datenbanken | 20–23 | Datenbanksysteme, relationale Modelle, SQLite (Grundlagen + Vertiefung) |
+Phasen-Kurzüberblick:
+
+1. **Python-Grundlagen** (NB 01–06)
+2. **Kontrollfluss** (NB 07–11)
+3. **Algorithmen** (NB 12–15)
+4. **Datenanalyse** (NB 16–19)
+5. **Datenbanken** (NB 20–23)
 
 Ergänzend gibt es Übungsblätter, Cheat Sheets und Beamer-Folien als
 PDF-Bauplan.
