@@ -12,20 +12,25 @@
 PANDOC     = pandoc
 PDF_ENGINE = xelatex
 PYTHON     = python3
+JUPYTEXT   = jupytext
 
 # --- Verzeichnisse ----------------------------------------------------------
-GRAFIKEN_DIR = Grafiken
+GRAFIKEN_DIR     = Grafiken
+NOTEBOOK_SRC_DIR = Notebooks_src
+NOTEBOOK_DIR     = Notebooks
 
 # --- Quellen finden (shell, wegen Umlaute/Leerzeichen) ----------------------
 UEBUNGEN_MD   := $(shell find . -maxdepth 2 -path '*bungen/*.md'   -type f)
 CHEATSHEET_MD := $(shell find . -maxdepth 2 -path '*Cheat*Sheets/*.md' -type f)
 BEAMER_MD     := $(shell find . -maxdepth 2 -path '*sentationen/*.md' -type f)
 GRAFIK_SCRIPTS:= $(shell find $(GRAFIKEN_DIR) -name 'generate_*.py' -type f 2>/dev/null)
+NOTEBOOK_SRC  := $(shell find $(NOTEBOOK_SRC_DIR) -maxdepth 1 -name '*.md' -type f 2>/dev/null)
 
 # --- PDF-Zielpfade ----------------------------------------------------------
 UEBUNGEN_PDF   := $(UEBUNGEN_MD:.md=.pdf)
 CHEATSHEET_PDF := $(CHEATSHEET_MD:.md=.pdf)
 BEAMER_PDF     := $(BEAMER_MD:.md=.pdf)
+NOTEBOOK_IPYNB := $(patsubst $(NOTEBOOK_SRC_DIR)/%.md,$(NOTEBOOK_DIR)/%.ipynb,$(NOTEBOOK_SRC))
 
 # --- Pandoc-Optionen --------------------------------------------------------
 PANDOC_COMMON  = --pdf-engine=$(PDF_ENGINE) -V lang:de-DE
@@ -40,7 +45,7 @@ BEAMER_OPTS    = -t beamer \
 # Targets
 # ============================================================================
 
-.PHONY: all uebungen cheatsheets beamer grafiken clean help
+.PHONY: all uebungen cheatsheets beamer grafiken notebooks clean help
 
 all: grafiken uebungen cheatsheets beamer  ## Alles bauen
 
@@ -101,6 +106,24 @@ folien-%:
 		echo "→ Baue: $$file"; \
 		$(PANDOC) $(PANDOC_COMMON) $(BEAMER_OPTS) $(RESOURCE_PATH) -o "$${file%.md}.pdf" "$$file"; \
 	else echo "Keine Folien mit '$*' gefunden."; fi
+
+# --- Notebooks --------------------------------------------------------------
+# Baut Jupyter-Notebooks aus MyST-Markdown-Quellen via jupytext.
+# Einzelne Notebooks: make notebook-11  (Nummer im Dateinamen)
+# Alle migrierten:    make notebooks
+notebooks: $(NOTEBOOK_IPYNB)  ## Notebooks aus Markdown-Quellen bauen
+
+$(NOTEBOOK_DIR)/%.ipynb: $(NOTEBOOK_SRC_DIR)/%.md
+	@echo "→ Baue Notebook: $<"
+	$(JUPYTEXT) --to ipynb --output "$@" "$<"
+
+notebook-%:
+	@src=$$(find $(NOTEBOOK_SRC_DIR) -maxdepth 1 -name '*$**.md' -type f | head -1); \
+	if [ -n "$$src" ]; then \
+		out="$(NOTEBOOK_DIR)/$$(basename $${src%.md}).ipynb"; \
+		echo "→ Baue: $$src → $$out"; \
+		$(JUPYTEXT) --to ipynb --output "$$out" "$$src"; \
+	else echo "Keine Notebook-Quelle mit '$*' gefunden."; fi
 
 # --- Clean ------------------------------------------------------------------
 clean:  ## Alle generierten PDFs löschen
