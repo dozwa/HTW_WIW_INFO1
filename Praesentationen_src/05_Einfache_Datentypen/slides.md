@@ -178,7 +178,7 @@ print("Eco" in "Eco-Sneaker") # True
 
 - Nur zwei Werte: `True` und `False` (groß geschrieben!)
 - Ergebnis aller **Vergleiche**: `==`, `!=`, `<`, `>`, `<=`, `>=`
-- Verknüpfen mit `and`, `or`, `not`
+- Verknüpfungen `and`/`or`/`not` lernen Sie in **Notebook 08**
 
 ::: demobox
 **▶ Live-Demo** -- `04_boolean_bedingungen.py`

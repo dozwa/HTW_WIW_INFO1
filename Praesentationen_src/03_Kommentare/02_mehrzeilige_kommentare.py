@@ -1,36 +1,29 @@
 """
-Veggie Soles -- Versandkosten-Kalkulation
+Veggie Soles -- Tagesreport (Beispiel)
 
-Berechnet die Versandkosten fuer eine Bestellung nach den geltenden
-Konditionen:
-
-    - Pauschale: 4.95 EUR
-    - Frei-ab-Schwelle: 100.00 EUR Warenwert
+Demonstriert mehrzeilige Kommentare mit Anfuehrungszeichen.
+Der Modul-Docstring oben wird auch von help() angezeigt --
+das ist die offizielle Doku-Konvention in Python.
 
 Stand: SoSe 2026
 Autor: HTW WIW INFO1 -- Beispielcode
 """
 
-# Modul-Docstring (oben) wird auch von help() angezeigt --
-# das ist die offizielle Doku-Konvention in Python.
+# Verwendet nur Konzepte aus den Notebooks 01-03:
+#  - print()    (NB 02)
+#  - Kommentare (NB 03)
 
-VERSANDPAUSCHALE = 4.95
-VERSANDFREI_AB = 100.00
+print("Veggie Soles -- Tagesreport")
+print("---------------------------")
 
 '''
 Mehrzeiliger Kommentar mitten im Code:
-Hier dokumentieren wir, warum wir 100.00 EUR als Schwelle nehmen --
-naemlich weil das die Marketing-Vorgabe vom 12.04.2026 ist.
-Ein einzeiliger Kommentar wuerde hier zu schmal werden.
+Hier dokumentieren wir, warum die Reihenfolge der Ausgaben
+genau so ist und nicht anders -- naemlich entlang der
+Marketing-Praesentation vom 12.04.2026.
+Ein einzeiliger Kommentar waere dafuer zu schmal.
 '''
 
-warenwert = 89.95
-
-if warenwert >= VERSANDFREI_AB:
-    versand = 0.0
-else:
-    versand = VERSANDPAUSCHALE
-
-print(f"Warenwert: {warenwert:.2f} EUR")
-print(f"Versand:   {versand:.2f} EUR")
-print(f"Gesamt:    {warenwert + versand:.2f} EUR")
+print("Top 1: Eco-Sneaker")
+print("Top 2: Hemp-High")
+print("Top 3: Bambus-Boot")

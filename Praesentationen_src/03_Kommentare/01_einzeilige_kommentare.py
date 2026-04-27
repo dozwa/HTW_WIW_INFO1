@@ -2,22 +2,25 @@
 03 -- Kommentare | Demo 1: Einzeilige Kommentare mit #
 
 Zeigt:
-- Eigene Zeile vs. Zeilenende
-- Code temporaer auskommentieren
-- Konvention: Leerzeichen nach #
+- Kommentar auf eigener Zeile
+- Kommentar am Zeilenende
+- Code temporaer auskommentieren (deaktivieren)
+- Konvention: ein Leerzeichen nach #
+
+Verwendet nur Konzepte aus den Notebooks 01-03:
+- print() (NB 02)
+- Kommentare (NB 03)
 """
 
-# Veggie Soles -- aktueller Bestand der Top-Produkte
-print("Bestandsuebersicht")
+# Veggie Soles -- Tagesreport (Top-Produkte im Sortiment)
+print("=" * 30)
+print("Veggie Soles -- Top-Produkte")
+print("=" * 30)
 
-bestand_eco = 42        # Eco-Sneaker -- guter Verkaufsschlager
-bestand_hemp = 15       # Hemp-High -- Nachschub bestellt
-# bestand_bambus = 8    # Bambus-Boot -- aktuell ausgeblendet
-bestand_jute = 23       # Jute-Runner -- Sommer-Hit
-
-print(f"  Eco-Sneaker:  {bestand_eco}")
-print(f"  Hemp-High:    {bestand_hemp}")
-# print(f"  Bambus-Boot:  {bestand_bambus}")  # auskommentiert -> nicht ausgeben
-print(f"  Jute-Runner:  {bestand_jute}")
+# Jedes Produkt einmal ausgeben:
+print("Eco-Sneaker")        # unser Klassiker
+print("Hemp-High")           # knoechelhoch, aus Hanf
+# print("Bambus-Boot")       # Winter-Modell -- aktuell ausgeblendet
+print("Jute-Runner")         # Sommer-Hit
 
 # TODO: ab Lagerbestand < 10 automatisch Nachbestellung ausloesen

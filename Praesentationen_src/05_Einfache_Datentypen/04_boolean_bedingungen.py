@@ -4,48 +4,52 @@
 Zeigt:
 - Bool-Werte True/False
 - Vergleichsoperatoren als Bool-Quelle
-- Logische Verknuepfungen and / or / not
-- 'in'-Operator fuer Strings
-- Praxis: Versand-frei-Bedingung pruefen
+- 'in'-Operator auf Strings
+- bool() zur Typumwandlung
+
+Verwendet nur Konzepte bis NB 05. Logik-Verknuepfungen (and/or/not)
+folgen in NB 08.
 """
 
 # Direkte Bool-Werte
 auf_lager = True
 ausverkauft = False
-print(f"auf_lager:    {auf_lager}")
-print(f"ausverkauft:  {ausverkauft}")
+
+print("auf_lager:    ", auf_lager)
+print("ausverkauft:  ", ausverkauft)
+print("type:         ", type(auf_lager).__name__)
 
 print()
-# Bool aus Vergleichen
+# Bool aus Vergleichen -- die Hauptquelle fuer Bool-Werte
 preis = 89.95
-print(f"preis > 100   → {preis > 100}")        # False
-print(f"preis < 100   → {preis < 100}")        # True
-print(f"preis == 89.95 → {preis == 89.95}")    # True
 
-print()
-# Logische Verknuepfung
-bestand = 5
-versand_frei_grenze = 100
-warenwert = 105
-
-versand_gratis = warenwert >= versand_frei_grenze
-verfuegbar = bestand > 0
-
-print(f"versand_gratis: {versand_gratis}")
-print(f"verfuegbar:     {verfuegbar}")
-print(f"bestellbar:     {versand_gratis and verfuegbar}")
-
-# Mehrere Bedingungen kombinieren
-ist_premium_kunde = True
-hat_gutschein = False
-bekommt_rabatt = ist_premium_kunde or hat_gutschein
-print(f"bekommt_rabatt: {bekommt_rabatt}")
+print("preis > 100   →", preis > 100)        # False
+print("preis < 100   →", preis < 100)        # True
+print("preis == 89.95 →", preis == 89.95)    # True
+print("preis != 0    →", preis != 0)         # True
+print("preis >= 50   →", preis >= 50)        # True
+print("preis <= 50   →", preis <= 50)        # False
 
 print()
 # 'in' funktioniert auf Strings (und auf Listen, kommt in NB 06)
 produkt = "Eco-Sneaker"
-print(f"'Eco' in '{produkt}': {'Eco' in produkt}")        # True
-print(f"'Hemp' in '{produkt}': {'Hemp' in produkt}")      # False
+print("'Eco' in produkt:  ", "Eco" in produkt)        # True
+print("'Hemp' in produkt: ", "Hemp" in produkt)       # False
 
-# 'not' kehrt einen Bool um
-print(f"not auf_lager: {not auf_lager}")                  # False
+print()
+# bool() hat eine Falle: nicht-leerer String wird True
+print("bool('False') =", bool('False'))      # True (!) -- nicht-leer
+print("bool('')      =", bool(''))           # False -- leerer String
+print("bool(0)       =", bool(0))            # False -- 0
+print("bool(0.0)     =", bool(0.0))          # False -- 0.0
+print("bool(42)      =", bool(42))           # True
+
+print()
+# Bool als Ergebnis einer Pruefung speichern
+warenwert = 105.00
+versand_frei_grenze = 100.00
+versand_gratis = warenwert >= versand_frei_grenze
+
+print("warenwert:        ", warenwert)
+print("Schwelle:         ", versand_frei_grenze)
+print("versand_gratis:   ", versand_gratis)

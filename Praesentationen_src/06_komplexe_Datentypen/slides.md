@@ -170,14 +170,16 @@ print(len(einzigartige))   # 3
 - Geschweifte Klammern `{ }`
 - **Reihenfolge** spielt **keine** Rolle
 - **Duplikate** werden automatisch entfernt
-- Schnell für „ist X drin?" und Mengenoperationen
+- Schnell für „ist X drin?"
 
 ```python
-groessen_a = {38, 39, 40}
-groessen_b = {39, 40, 41}
-groessen_a & groessen_b   # {39, 40}  (Schnitt)
-groessen_a | groessen_b   # {38, 39, 40, 41}  (Vereinigung)
+groessen = {40, 41, 40, 42, 41}
+print(groessen)        # {40, 41, 42}
+groessen.add(43)
+groessen.remove(40)
 ```
+
+> Mengenoperationen (Schnitt, Vereinigung) lernen Sie zusammen mit den Operatoren in NB 08.
 
 ::: demobox
 **▶ Live-Demo** -- `04_sets_unique.py`

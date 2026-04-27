@@ -39,17 +39,18 @@ header-includes:
 ## Ohne Kommentar
 
 ```python
-p = 89.95
-v = 4.95 if p < 100 else 0
-g = p + v
+print("Eco-Sneaker")
+print("89.95 EUR")
+print("auf Lager")
 ```
 
 ## Mit Kommentar
 
 ```python
-preis = 89.95             # Eco-Sneaker
-versand = 4.95 if preis < 100 else 0   # gratis ab 100 EUR
-gesamtpreis = preis + versand
+# Veggie Soles -- Tagesreport (Auszug)
+print("Eco-Sneaker")        # unser Klassiker
+print("89.95 EUR")           # Preis Brutto
+print("auf Lager")           # Verfuegbarkeit heute
 ```
 
 > **Code wird einmal geschrieben, aber tausendmal gelesen.** Kommentare sind für Sie selbst in 6 Monaten -- und für alle, die nach Ihnen kommen.
@@ -59,7 +60,7 @@ gesamtpreis = preis + versand
 # Was Kommentare können
 
 - **Erklären, warum** etwas so gemacht wird (nicht: was steht da)
-- **Domain-Wissen festhalten** ("4.95 EUR Pauschale, gratis ab 100")
+- **Domain-Wissen festhalten** (z. B. "Pauschale 4.95 EUR")
 - **Komplexen Code in Schritte aufbrechen**
 - **Code temporär deaktivieren** (zum Debuggen)
 - **Aufgaben markieren**: `# TODO`, `# FIXME`
@@ -72,8 +73,7 @@ gesamtpreis = preis + versand
 
 ```python
 # Eco-Sneaker: unser Klassiker im Sortiment
-produkt = "Eco-Sneaker"
-preis = 89.95
+print("Eco-Sneaker")
 ```
 
 - Beginnen mit `#` und gehen bis Zeilenende
@@ -94,9 +94,9 @@ preis = 89.95
 # Kommentare am Zeilenende
 
 ```python
-preis = 89.95              # in EUR (Brutto)
-versand = 4.95             # Pauschale -- gratis ab 100 EUR
-gesamtpreis = preis + versand   # was der Kunde zahlt
+print("Eco-Sneaker")    # unser Klassiker
+print("Hemp-High")      # knoechelhoch, aus Hanf
+print("Bambus-Boot")    # winterfest
 ```
 
 - Erklären die **konkrete** Zeile direkt nebenan
@@ -111,15 +111,16 @@ gesamtpreis = preis + versand   # was der Kunde zahlt
 
 ```python
 '''
-Veggie Soles -- Versandkosten-Berechnung
+Veggie Soles -- Tagesreport
 
-Pauschale: 4.95 EUR
-Frei-ab-Schwelle: 100.00 EUR
+Listet die Top-Produkte mit ihren Bezeichnungen.
 
 Stand: SoSe 2026
 '''
 
-VERSANDPAUSCHALE = 4.95
+print("Eco-Sneaker")
+print("Hemp-High")
+print("Bambus-Boot")
 ```
 
 - **Drei Anführungszeichen** öffnen und schließen den Block
@@ -143,8 +144,8 @@ VERSANDPAUSCHALE = 4.95
 | Eine Zeile knapp erklären | `# wie hier` |
 | Hinweis am Zeilenende | `code  # wie hier` |
 | Datei-Übersicht / Doku-Block | `'''...'''` am Datei-Anfang |
-| Funktion dokumentieren | `'''...'''` als erste Zeile in der Funktion (Docstring) |
 | Mehrere Zeilen Code temporär aus | mehrere `#` -- IDE hat Shortcut dafür |
+| Aufgabe für später markieren | `# TODO: ...`, `# FIXME: ...` |
 
 ::: demobox
 **▶ Live-Demo** -- `03_kommentar_stilarten.py`
@@ -155,13 +156,13 @@ VERSANDPAUSCHALE = 4.95
 # Anti-Patterns: schlechte Kommentare
 
 ```python
-i = i + 1                  # i um eins erhöhen   ← überflüssig
+print("Hallo")       # gibt Hallo aus           ← überflüssig
 
-preis = preis * 1.19       # Brutto berechnen     ← was/warum, OK
+print("Eco-Sneaker") # Klassiker im Sortiment   ← was/warum, OK
 
-# alter Code (irgendwann mal kaputt)
-# preis = preis * 1.19
-# print(preis)             ← bitte löschen, nicht behalten
+# alter Code (irgendwann mal gebraucht)
+# print("alter Output")
+# print("nochmal alter Output")     ← bitte löschen, nicht behalten
 ```
 
 - **Überflüssig**: was der Code tut, sieht man im Code
@@ -188,18 +189,14 @@ preis = preis * 1.19       # Brutto berechnen     ← was/warum, OK
 
 # Ausblick: Notebook 04 -- Variablen
 
-- Werte **speichern** in benannten Schubladen
-- Variablen **überschreiben**
-- Erlaubte und unerlaubte Namen
-- Mehrfachzuweisung in einer Zeile
+Bisher haben wir mit `print()` direkt Werte ausgegeben. Im nächsten Notebook lernen Sie, **Werte in benannten Schubladen zu speichern**:
 
 ```python
-produktname = "Eco-Sneaker"     # Variable
-preis = 89.95                   # Variable
-print(produktname, preis)
+produktname = "Eco-Sneaker"     # Variable!
+print(produktname)
 ```
 
-Damit beginnt das eigentliche Programmieren.
+Damit wird das Programmieren richtig flexibel.
 
 ---
 

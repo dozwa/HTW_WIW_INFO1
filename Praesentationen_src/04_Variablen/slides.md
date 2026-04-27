@@ -186,8 +186,8 @@ a = b = c = 0
 preis_alt, preis_neu = preis_neu, preis_alt
 ```
 
-- Praktisch für **Tupel-Entpacken** (kommt später bei Funktionen wieder)
 - Reihenfolge zählt: das *n*-te Wort links bekommt den *n*-ten Wert rechts
+- Praktisch für **Initialisierung** mehrerer Variablen auf einmal
 
 ::: demobox
 **▶ Live-Demo** -- `04_mehrfachzuweisung.py`

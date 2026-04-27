@@ -3,49 +3,42 @@
 
 Zeigt mit Veggie-Soles-Beispielen, welche Kommentare hilfreich sind und
 welche besser weggelassen werden sollten.
+
+Verwendet nur Konzepte aus den Notebooks 01-03 (print() + Kommentare).
 """
 
 # ============================================================
 # SCHLECHT: Kommentar wiederholt nur den Code
 # ============================================================
 
-i = 0
-i = i + 1     # i um eins erhoehen   <- ueberfluessig
+print("Hallo")          # gibt Hallo aus    <- ueberfluessig
 
 # ============================================================
 # GUT: Kommentar erklaert das WARUM
 # ============================================================
 
-bestellnummer = i   # nur fuer Demo -- normalerweise aus DB
-
-mwst_satz = 0.19    # gesetzliche MwSt fuer physische Ware in DE
+# Kopfzeile fuer den Tagesreport (Marketing-Vorgabe 12.04.2026)
+print("Veggie Soles -- Tagesreport")
 
 # ============================================================
 # SCHLECHT: auskommentierter alter Code, der nie geloescht wurde
 # ============================================================
 
-# Frueher hatten wir 7% MwSt fuer Buecher:
-# mwst_satz = 0.07
-# preis_brutto = preis * (1 + mwst_satz)
+# Frueher hatten wir einen Werbeslogan oben:
+# print("Vegan. Fair. Nachhaltig.")
+# print("Seit 2024.")
 
-# (Seit 2024 nicht mehr relevant -- bitte loeschen, Git merkt sich's)
+# (Aktuell nicht mehr -- bitte loeschen, Git merkt sich's)
 
 # ============================================================
 # GUT: TODO / FIXME als markierte Aufgabe
 # ============================================================
 
-# TODO: Stammkunden-Rabatt einrechnen, sobald die Kundenliste verfuegbar ist
-# FIXME: Float-Arithmetik bei sehr grossen Summen ungenau -- Decimal pruefen
+# TODO: Datum dynamisch einsetzen, sobald wir das in NB 04 lernen
+# FIXME: Trennlinie ist unten breiter als oben
 
-
-# ============================================================
-# Praxis: was waere hier ein guter Kommentar?
-# ============================================================
-
-# Versandkosten Eco-Sneaker
-warenwert = 89.95
-
-# Pauschale 4.95 EUR -- gratis ab 100 (Marketing-Vorgabe 12.04.2026)
-versand = 0.0 if warenwert >= 100 else 4.95
-
-print(f"Warenwert: {warenwert} EUR, Versand: {versand} EUR")
+print("---------------------------")
+print("Top 1: Eco-Sneaker")
+print("Top 2: Hemp-High")
+print("Top 3: Bambus-Boot")
+print("=============================")
