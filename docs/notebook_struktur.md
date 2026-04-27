@@ -109,13 +109,17 @@ Besonders in den frühen Notebooks zur Konzeptverankerung eingesetzt.
 
 ## 5. Progressionsmodell
 
-| Phase | Notebooks | Charakter |
-|-------|-----------|-----------|
-| **Phase 1 – Grundlagen** | 01–06 | Hohe Emotion, einfache Konzepte, viele Metaphern |
-| **Phase 2 – Kontrollfluss** | 07–11 | Mittlere Komplexität, error-fokussiert |
-| **Phase 3 – Algorithmen** | 12–15 | Abstraktion, Visualisierung (Mermaid), Analyse |
-| **Phase 4 – Datenanalyse** | 16–19 | Bibliotheks-basiert, praxisnah |
-| **Phase 5 – Datenbanken** | 20–23 | Theorie→Praxis-Dualismus, reale Daten |
+> **Definition der Phasen + Konzept-Verfügbarkeit pro Notebook:** siehe
+> [`curriculum.md`](curriculum.md) (Single Source of Truth). Hier nur
+> Charakterisierung der Phasen aus didaktischer Perspektive.
+
+| Phase | Charakter |
+|-------|-----------|
+| **Phase 1 – Grundlagen** (NB 01–06) | Hohe Emotion, einfache Konzepte, viele Metaphern |
+| **Phase 2 – Kontrollfluss** (NB 07–11) | Mittlere Komplexität, error-fokussiert |
+| **Phase 3 – Algorithmen** (NB 12–15) | Abstraktion, Visualisierung (Mermaid), Analyse |
+| **Phase 4 – Datenanalyse** (NB 16–19) | Bibliotheks-basiert, praxisnah |
+| **Phase 5 – Datenbanken** (NB 20–23) | Theorie→Praxis-Dualismus, reale Daten |
 
 ### Erkennbare Entwicklungen über den Kursverlauf
 
