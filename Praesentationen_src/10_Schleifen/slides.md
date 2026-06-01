@@ -25,12 +25,12 @@ header-includes:
 1. Wozu Schleifen?
 2. `while` -- Wiederholen mit Bedingung
 3. Endlosschleifen vermeiden
-4. `for` -- ueber Sammlungen iterieren
+4. `for` -- über Sammlungen iterieren
 5. `range()` -- Zahlenfolgen
 6. `break` und `continue`
 7. List Comprehensions
 
-> **Lernziel**: Wiederkehrende Aufgaben (Bestand pruefen, Summen bilden, Listen filtern) automatisieren -- statt 50 mal copy-paste.
+> **Lernziel**: Wiederkehrende Aufgaben (Bestand prüfen, Summen bilden, Listen filtern) automatisieren -- statt 50 mal copy-paste.
 
 > **Wie wir heute arbeiten**: Nach jedem Konzept zeigt die Folie *Live-Demo* (ich im Terminal) und *Sofort ausprobieren* (Sie im Notebook 10).
 
@@ -43,7 +43,7 @@ header-includes:
 ```python
 print(warenkorb[0])
 print(warenkorb[1])
-print(warenkorb[2])     # was, wenn 50 Eintraege?
+print(warenkorb[2])     # was, wenn 50 Einträge?
 ```
 
 ## Mit Schleife
@@ -67,16 +67,20 @@ while versuche > 0:
 print("Keine Versuche mehr.")
 ```
 
-- Solange die Bedingung **wahr** ist, laeuft der Block
-- Bedingung wird **vor** jedem Durchlauf geprueft
+- Solange die Bedingung **wahr** ist, läuft der Block
+- Bedingung wird **vor** jedem Durchlauf geprüft
 - **Wichtig**: irgendetwas im Block muss die Bedingung am Ende **falsch** machen
+
+---
+
+# `while` -- Demo & Übung
 
 ::: demobox
 **▶ Live-Demo** -- `01_while_countdown.py`
 :::
 
 ::: exercisebox
-**✎ Sofort ausprobieren** -- Notebook 10, Kap. While: Countdown 10$\to$0, Hochzaehlen 0$\to$5, gerade Zahlen
+**✎ Sofort ausprobieren** -- Notebook 10, Kap. While: Countdown 10 $\to$ 0, Hochzählen 0 $\to$ 5, gerade Zahlen
 :::
 
 ---
@@ -93,7 +97,9 @@ while versuche > 0:
 - Bei laufender Endlosschleife: **STRG+C** im Terminal
 - In Jupyter: "Interrupt Kernel"
 
-## Bewusst eingesetzt: `while True` + `break`
+---
+
+# `while True` + `break` -- bewusst eingesetzt
 
 ```python
 while True:
@@ -103,11 +109,11 @@ while True:
     print("nicht im Sortiment, nochmal.")
 ```
 
-> **Faustregel**: jede Schleife muss eine **Abbruchbedingung** haben -- sei es im Header oder ueber `break`.
+> **Faustregel**: jede Schleife muss eine **Abbruchbedingung** haben -- sei es im Header oder über `break`.
 
 ---
 
-# `for` -- ueber Sammlungen iterieren
+# `for` -- über Sammlungen iterieren
 
 ```python
 warenkorb = ["Eco-Sneaker", "Hemp-High", "Bambus-Boot"]
@@ -116,16 +122,20 @@ for produkt in warenkorb:
     print(produkt)
 ```
 
-- `for VAR in SAMMLUNG:` -- in jedem Durchlauf bekommt `VAR` den naechsten Wert
+- `for VAR in SAMMLUNG:` -- in jedem Durchlauf bekommt `VAR` den nächsten Wert
 - Funktioniert mit **Listen, Tupeln, Sets, Strings, Dicts**
 - Beendet sich automatisch, wenn alle Elemente abgearbeitet sind
+
+---
+
+# `for` -- Demo & Übung
 
 ::: demobox
 **▶ Live-Demo** -- `02_for_produkte.py`
 :::
 
 ::: exercisebox
-**✎ Sofort ausprobieren** -- Notebook 10, Kap. For: Liste ausgeben, gegen Schwellenwert pruefen, Strings durchgehen
+**✎ Sofort ausprobieren** -- Notebook 10, Kap. For: Liste ausgeben, gegen Schwellenwert prüfen, Strings durchgehen
 :::
 
 ---
@@ -149,7 +159,7 @@ for i in range(0, 21, 5):    # 0, 5, 10, 15, 20
 | `range(start, stop)` | start, ..., stop-1 |
 | `range(start, stop, step)` | mit Schrittweite |
 
-> Die obere Grenze ist **exklusiv** -- typische Anfaenger-Falle: `range(1, 10)` geht **nicht** bis 10.
+> Die obere Grenze ist **exklusiv** -- typische Anfänger-Falle: `range(1, 10)` geht **nicht** bis 10.
 
 ---
 
@@ -168,6 +178,10 @@ mittel = gesamt / len(preise)
 
 print(f"Gesamt: {gesamt:.2f} EUR, Mittel: {mittel:.2f} EUR")
 ```
+
+---
+
+# Summen, Mittelwerte -- Muster & Demo
 
 - "Sammelvariable" (`gesamt`) **vor** der Schleife auf den Startwert
 - In jedem Durchlauf erweitern
@@ -189,26 +203,30 @@ for produkt in warenkorb:
 
 for preis in preise:
     if preis > 100:
-        continue              # diesen Durchlauf ueberspringen
-    print(f"guenstig: {preis}")
+        continue              # diesen Durchlauf überspringen
+    print(f"günstig: {preis}")
 ```
 
 | Anweisung | Wirkung |
 |---|---|
 | `break` | Schleife sofort beenden |
-| `continue` | Rest des Durchlaufs ueberspringen, naechster Wert |
+| `continue` | Rest des Durchlaufs überspringen, nächster Wert |
+
+---
+
+# `break` / `continue` -- Demo & Übung
 
 ::: demobox
 **▶ Live-Demo** -- `04_break_continue.py`
 :::
 
 ::: exercisebox
-**✎ Sofort ausprobieren** -- Notebook 10, Kap. break/continue: Suche abbrechen, ungerade Zahlen ueberspringen
+**✎ Sofort ausprobieren** -- Notebook 10, Kap. break/continue: Suche abbrechen, ungerade Zahlen überspringen
 :::
 
 ---
 
-# Schleife ueber ein Dictionary
+# Schleife über ein Dictionary
 
 ```python
 preise = {"Eco-Sneaker": 89.95, "Hemp-High": 109.00, "Bambus-Boot": 135.50}
@@ -219,7 +237,7 @@ for name, preis in preise.items():
 
 | Methode | Was kommt im Durchlauf |
 |---|---|
-| `for k in d:` | nur Schluessel |
+| `for k in d:` | nur Schlüssel |
 | `for v in d.values():` | nur Werte |
 | `for k, v in d.items():` | Paare |
 
@@ -248,10 +266,10 @@ brutto = [p * 1.19 for p in [89.95, 109.00, 135.50]]
 ## Mit Filter
 
 ```python
-guenstig = [p for p in preise if p < 100]
+günstig = [p for p in preise if p < 100]
 ```
 
-> Comprehensions sind **kuerzer**, aber nur sinnvoll, wenn der Ausdruck **eine Zeile** bleibt. Im Zweifel: klassische `for`-Schleife.
+> Comprehensions sind **kürzer**, aber nur sinnvoll, wenn der Ausdruck **eine Zeile** bleibt. Im Zweifel: klassische `for`-Schleife.
 
 ---
 
@@ -260,11 +278,11 @@ guenstig = [p for p in preise if p < 100]
 | Aufgabe | Syntax |
 |---|---|
 | while-Schleife | `while cond: ...` |
-| for ueber Liste | `for x in liste: ...` |
+| for über Liste | `for x in liste: ...` |
 | Zahlenfolge | `for i in range(start, stop, step):` |
 | Dict iterieren | `for k, v in d.items():` |
 | Schleife verlassen | `break` |
-| Durchlauf ueberspringen | `continue` |
+| Durchlauf überspringen | `continue` |
 | Liste bauen | `[ausdruck for x in liste if cond]` |
 
 > **Faustregel**: feste Anzahl Wiederholungen $\to$ `for`. Unbekannte Anzahl bis Ereignis $\to$ `while`.
@@ -281,7 +299,7 @@ for eintrag in eingaben:
     print(1 / zahl)             # ZeroDivisionError, wenn 0
 ```
 
-Im naechsten Notebook: **`try`/`except`** -- Programme robust gegen Fehler machen, statt sie crashen zu lassen.
+Im nächsten Notebook: **`try`/`except`** -- Programme robust gegen Fehler machen, statt sie crashen zu lassen.
 
 ---
 
@@ -289,8 +307,8 @@ Im naechsten Notebook: **`try`/`except`** -- Programme robust gegen Fehler mache
 
 ✓ `while` -- bedingte Wiederholung  
 ✓ Endlosschleifen erkannt und vermieden  
-✓ `for` ueber Listen, Strings, Dicts  
-✓ `range()` fuer Zahlenfolgen  
+✓ `for` über Listen, Strings, Dicts  
+✓ `range()` für Zahlenfolgen  
 ✓ `break` / `continue` -- Schleifensteuerung  
 ✓ List Comprehensions als Kurzform  
 
@@ -298,6 +316,6 @@ Im naechsten Notebook: **`try`/`except`** -- Programme robust gegen Fehler mache
 **✎ Zur Vertiefung im Notebook 10:**
 
 - "Sofort ausprobieren"-Aufgaben in jedem Kapitel
-- Praktische Uebung: Bestandsaufnahme mit `while True` + `break`
+- Praktische Übung: Bestandsaufnahme mit `while True` + `break`
 - Trainingsmaterial: gestufte Aufgaben (Quadratzahlen, FizzBuzz, Filterung)
 :::

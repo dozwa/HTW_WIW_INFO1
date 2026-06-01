@@ -28,6 +28,7 @@ header-includes:
 4. Logische Operatoren (`and`, `or`, `not`)
 5. Identität (`is`) vs. Gleichheit (`==`)
 6. Zugehörigkeit (`in`, `not in`)
+7. Mengenoperationen auf Sets (`|`, `&`, `-`, `^`)
 
 > **Lernziel**: Operatoren als Bausteine für Geschäftslogik nutzen -- Preise rechnen, Bedingungen kombinieren, Listen prüfen.
 
@@ -72,6 +73,9 @@ versandfrei = brutto >= 50              # True
 ```python
 brutto = netto * (1 + mwst)
 ```
+---
+
+# Arithmetische Operatoren
 
 ::: demobox
 **▶ Live-Demo** -- `01_arithmetik_preise.py`
@@ -119,6 +123,10 @@ einzelartikel_rest = bestellte_artikel % artikel_pro_karton     # 11
 - Vergleichsoperatoren liefern **immer** `True` oder `False`
 - Ergebnistyp: **bool**
 
+---
+
+# Vergleichsoperatoren
+
 ::: demobox
 **▶ Live-Demo** -- `02_vergleich_bestand.py`
 :::
@@ -163,6 +171,10 @@ nicht_storniert = not storniert
 | `False` | `True` | `False` | `True` | `True` |
 | `False` | `False` | `False` | `False` | `True` |
 
+---
+
+# Logische Operatoren -- `and`, `or`, `not`
+
 ::: demobox
 **▶ Live-Demo** -- `03_logik_versandfrei.py`
 :::
@@ -185,6 +197,10 @@ Python wertet **wie in Mathe** aus:
 6. `not`
 7. `and`
 8. `or`
+
+---
+
+# Vorrangregeln (Operator Precedence)
 
 ```python
 # ohne Klammern -- riskant zu lesen
@@ -210,6 +226,10 @@ print(liste_a is liste_b)    # True  (identisches Objekt)
 print(liste_a == liste_c)    # True  (gleicher Inhalt)
 print(liste_a is liste_c)    # False (anderes Objekt!)
 ```
+
+---
+
+# `is` vs. `==` -- Identität vs. Gleichheit
 
 - `==` fragt: **"Sind die Werte gleich?"** (fast immer das, was Sie wollen)
 - `is`  fragt: **"Ist es dasselbe Objekt im Speicher?"**
@@ -248,6 +268,36 @@ print("Bambus-Boot" not in warenkorb)    # True
 
 ---
 
+# Mengenoperationen auf Sets
+
+Ein **Set** (`{...}`) ist eine *Menge* -- Operatoren rechnen damit wie in der Mengenlehre:
+
+![](08_mengenoperationen_venn.png){width=96%}
+
+| `A` \| `B`  $=A \cup B$ | `A & B`  $=A \cap B$ | `A - B`  $=A \setminus B$ | `A ^ B`  $=A \triangle B$ |
+|---|---|---|---|
+| alles aus beiden | nur das Gemeinsame | nur in `A`, nicht `B` | in genau einem |
+
+---
+
+# Mengenoperationen -- konkret
+
+```python
+eco  = {"Anna", "Max", "Lea"}     # kauften Eco-Sneaker
+hemp = {"Max", "Tom"}             # kauften Hemp-High
+
+eco | hemp     # {'Anna', 'Max', 'Lea', 'Tom'}
+eco & hemp     # {'Max'}
+eco - hemp     # {'Anna', 'Lea'}
+eco ^ hemp     # {'Anna', 'Lea', 'Tom'}
+```
+
+(Vgl. die Venn-Diagramme der vorigen Folie -- `eco` entspricht $A$, `hemp` entspricht $B$.)
+
+> **Faustregel**: Duplikate weg? Zwei Listen vergleichen? Gemeinsames finden? $\to$ in ein `set()` packen und mit `| & - ^` rechnen.
+
+---
+
 # Cheat Card
 
 | Klasse | Operatoren |
@@ -257,6 +307,7 @@ print("Bambus-Boot" not in warenkorb)    # True
 | Logik | `and or not` |
 | Identität | `is`, `is not` |
 | Zugehörigkeit | `in`, `not in` |
+| Mengen (Sets) | \| `&` `-` `^` |
 | Zuweisung | `=`, `+=`, `-=`, `*=`, `/=` |
 
 > **Faustregel**: Vergleichs- und Logikoperatoren liefern `bool`. Genau diese `bool`-Werte brauchen wir ab Notebook 09 fuer `if`/`elif`/`else`.
@@ -288,6 +339,7 @@ else:
 ✓ Logik: `and`, `or`, `not` mit Wahrheitstabellen  
 ✓ `is` vs. `==` -- Identität vs. Gleichheit  
 ✓ `in` / `not in` auf Listen und Strings  
+✓ Mengenoperationen auf Sets: `|`, `&`, `-`, `^`  
 
 ::: exercisebox
 **✎ Zur Vertiefung im Notebook 08:**

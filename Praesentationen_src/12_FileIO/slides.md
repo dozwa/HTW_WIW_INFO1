@@ -27,13 +27,13 @@ header-includes:
 3. Die Modi `r`, `w`, `a`
 4. Schreiben mit `write()`
 5. Lesen mit `read()` / `readline()` / Iteration
-6. `with`-Block -- automatisches Schliessen
+6. `with`-Block -- automatisches Schließen
 7. Pfade: absolut vs. relativ
 8. Fehlerbehandlung beim File I/O
 
-> **Lernziel**: Daten zwischen Programmlaeufen erhalten -- Bestellungen, Logs, Tagesreports in Dateien sichern.
+> **Lernziel**: Daten über Programmstarts hinweg in Dateien sichern.
 
-> **Wie wir heute arbeiten**: Nach jedem Konzept zeigt die Folie *Live-Demo* (ich im Terminal) und *Sofort ausprobieren* (Sie im Notebook 12).
+> **Wie wir arbeiten**: Pro Konzept *Live-Demo* (ich) + Übung (Sie, NB 12).
 
 ---
 
@@ -53,29 +53,33 @@ with open("warenkorb.txt", "w") as f:
     f.write("Eco-Sneaker\nHemp-High\n")
 ```
 
-> Dateien sind das **Gedaechtnis** Ihres Programms ueber Programmstarts hinweg.
+> Dateien sind das **Gedächtnis** Ihres Programms über Programmstarts hinweg.
 
 ---
 
 # `open()` und `close()`
 
 ```python
-f = open("preise.txt", "w")    # oeffnen
+f = open("preise.txt", "w")    # öffnen
 f.write("Eco-Sneaker 89.95\n") # arbeiten
-f.close()                      # schliessen
+f.close()                      # schließen
 ```
 
 - `open()` liefert ein **File-Objekt**
 - `close()` schreibt den Puffer auf die Festplatte und gibt Ressourcen frei
-- **Vergessen Sie's nicht** -- ohne `close()` koennen Daten verloren gehen
+- **Vergessen Sie's nicht** -- ohne `close()` können Daten verloren gehen
 - Besser: `with`-Block (gleich)
+
+---
+
+# `open()` / `close()` -- Demo & Übung
 
 ::: demobox
 **▶ Live-Demo** -- `01_datei_schreiben.py`
 :::
 
 ::: exercisebox
-**✎ Sofort ausprobieren** -- Notebook 12, Angeleitete Uebung 1.1: `test.txt` erstellen
+**✎ Sofort ausprobieren** -- Notebook 12, Angeleitete Übung 1.1: `test.txt` erstellen
 :::
 
 ---
@@ -85,12 +89,12 @@ f.close()                      # schliessen
 | Modus | Bedeutung | Wenn Datei fehlt | Wenn Datei existiert |
 |---|---|---|---|
 | `"r"` | lesen | Fehler | wird gelesen |
-| `"w"` | schreiben | wird angelegt | **wird ueberschrieben** |
-| `"a"` | anhaengen | wird angelegt | wird verlaengert |
+| `"w"` | schreiben | wird angelegt | **wird überschrieben** |
+| `"a"` | anhängen | wird angelegt | wird verlängert |
 
 ```python
 open("log.txt", "w")     # neuer Tag, frisches Log
-open("log.txt", "a")     # Eintraege ans Ende anhaengen
+open("log.txt", "a")     # Einträge ans Ende anhängen
 open("log.txt", "r")     # Log lesen
 ```
 
@@ -109,7 +113,7 @@ with open("tagesreport.txt", "w") as f:
 
 - `write(text)` schreibt einen String -- **keinen automatischen Zeilenumbruch**
 - `\n` muss **manuell** gesetzt werden
-- Mehrere `write`-Aufrufe haengen direkt aneinander
+- Mehrere `write`-Aufrufe hängen direkt aneinander
 
 ```python
 zeilen = ["Eco-Sneaker", "Hemp-High", "Bambus-Boot"]
@@ -117,8 +121,12 @@ with open("modelle.txt", "w") as f:
     f.write("\n".join(zeilen))
 ```
 
+---
+
+# `write()` -- Übung
+
 ::: exercisebox
-**✎ Sofort ausprobieren** -- Notebook 12, Angeleitete Uebung 2.1: `mein_text.txt` mit Inhalt
+**✎ Sofort ausprobieren** -- Notebook 12, Angeleitete Übung 2.1: `mein_text.txt` mit Inhalt
 :::
 
 ---
@@ -135,10 +143,14 @@ print(inhalt)
 |---|---|
 | `f.read()` | gesamten Dateiinhalt als String |
 | `f.read(50)` | maximal 50 Zeichen |
-| `f.readline()` | naechste Zeile (mit `\n`) |
+| `f.readline()` | nächste Zeile (mit `\n`) |
 | `f.readlines()` | Liste aller Zeilen |
 
-> **Faustregel**: kleine Dateien $\to$ `read()`. Grosse Dateien $\to$ Zeile fuer Zeile (gleich).
+---
+
+# Lesen -- Faustregel & Demo
+
+> **Faustregel**: kleine Dateien $\to$ `read()`. Große Dateien $\to$ Zeile für Zeile (gleich).
 
 ::: demobox
 **▶ Live-Demo** -- `02_datei_lesen.py`
@@ -146,26 +158,30 @@ print(inhalt)
 
 ---
 
-# Zeile-fuer-Zeile mit `for`
+# Zeile-für-Zeile mit `for`
 
 ```python
 with open("tagesreport.txt", "r") as f:
-    for zeile in f:                          # eine Zeile pro Durchlauf
+    for zeile in f:        # eine Zeile pro Durchlauf
         zeile = zeile.rstrip("\n")
         print(f"Eintrag: {zeile}")
 ```
 
 - File-Objekte sind **iterierbar** -- direkt mit `for` nutzbar
-- Funktioniert auch fuer **riesige** Dateien (Datei wird streamend gelesen)
+- Funktioniert auch für **riesige** Dateien (Datei wird streamend gelesen)
 - `rstrip("\n")` entfernt das Zeilenumbruch-Zeichen
 
+---
+
+# Zeile-für-Zeile -- Übung
+
 ::: exercisebox
-**✎ Sofort ausprobieren** -- Notebook 12, Angeleitete Uebung 3.1 / 3.2: Inhalt lesen, Zeilen zaehlen
+**✎ Sofort ausprobieren** -- Notebook 12, Angeleitete Übung 3.1 / 3.2: Inhalt lesen, Zeilen zählen
 :::
 
 ---
 
-# Der `with`-Block -- automatisches Schliessen
+# Der `with`-Block -- automatisches Schließen
 
 ```python
 with open("tagesreport.txt", "w") as f:
@@ -175,8 +191,8 @@ with open("tagesreport.txt", "w") as f:
 ```
 
 - `with` ruft `close()` **automatisch** auf -- auch im Fehlerfall
-- Standard-Muster fuer **alle** File-Operationen
-- Rueckt den eigentlichen Code visuell ein -- klar erkennbar
+- Standard-Muster für **alle** File-Operationen
+- Rückt den eigentlichen Code visuell ein -- klar erkennbar
 
 ::: demobox
 **▶ Live-Demo** -- `03_with_block.py`
@@ -192,15 +208,19 @@ with open("tagesreport.txt", "w") as f:
 # relativ -- ausgehend vom Arbeitsverzeichnis
 open("daten/preise.txt")
 
-# absolut -- vollstaendiger Pfad ab Wurzel
-open("/Users/anna/projekte/preise.txt")        # macOS / Linux
-open(r"C:\Users\Anna\projekte\preise.txt")     # Windows (Raw-String!)
+# absolut -- vollständiger Pfad ab Wurzel
+open("/Users/anna/preise.txt")    # macOS / Linux
+open(r"C:\Anna\preise.txt")       # Windows (Raw-String!)
 ```
+
+---
+
+# Pfade -- Sonderpfade & Regel
 
 | Sonderpfade | Bedeutung |
 |---|---|
 | `.` | aktuelles Verzeichnis |
-| `..` | Verzeichnis darueber |
+| `..` | Verzeichnis darüber |
 | `daten/` | Unterordner |
 
 > **Faustregel**: in Lehr- und Kursprojekten **relative** Pfade. Die Datei landet dann da, wo Sie das Skript starten.
@@ -226,6 +246,10 @@ except PermissionError:
 | `PermissionError` | OS verweigert Zugriff |
 | `UnicodeDecodeError` | Datei-Encoding passt nicht |
 
+---
+
+# File I/O -- Live-Demo
+
 ::: demobox
 **▶ Live-Demo** -- `04_fehler_pfade.py`
 :::
@@ -236,25 +260,25 @@ except PermissionError:
 
 | Aufgabe | Syntax |
 |---|---|
-| Datei oeffnen | `open(name, modus)` |
-| Modus | `"r"` lesen, `"w"` schreiben, `"a"` anhaengen |
+| Datei öffnen | `open(name, modus)` |
+| Modus | `"r"` lesen, `"w"` schreiben, `"a"` anhängen |
 | Sicher arbeiten | `with open(...) as f:` |
 | Schreiben | `f.write("Text\n")` |
 | Lesen alles | `f.read()` |
-| Zeile fuer Zeile | `for zeile in f:` |
+| Zeile für Zeile | `for zeile in f:` |
 | Fehlerschutz | `try: ... except FileNotFoundError:` |
 
-> **Faustregel**: `with` + relative Pfade + spezifische `except`-Bloecke. Damit decken Sie 90 Prozent aller Faelle ab.
+> **Faustregel**: `with` + relative Pfade + spezifische `except`-Blöcke. Damit decken Sie 90 Prozent aller Fälle ab.
 
 ---
 
 # Ausblick: Notebook 13 -- Algorithmen
 
-Mit File I/O koennen Sie **echte** Daten verarbeiten -- nicht mehr nur Konstanten im Code. Im naechsten Schritt:
+Mit File I/O können Sie **echte** Daten verarbeiten -- nicht mehr nur Konstanten im Code. Im nächsten Schritt:
 
 - **Algorithmen** systematisch beschreiben
-- **Pseudocode**, Struktogramme, Komplexitaet
-- Vom Problem ueber den Plan zum Code
+- **Pseudocode**, Struktogramme, Komplexität
+- Vom Problem über den Plan zum Code
 
 Aus Datei lesen $\to$ Algorithmus anwenden $\to$ Ergebnis schreiben -- das ist der Standard-Bauplan datenverarbeitender Programme.
 
@@ -262,18 +286,18 @@ Aus Datei lesen $\to$ Algorithmus anwenden $\to$ Ergebnis schreiben -- das ist d
 
 # Heute geübt
 
-✓ `open()` / `close()` -- Datei oeffnen und schliessen  
-✓ Modi `r`, `w`, `a` -- lesen, ueberschreiben, anhaengen  
+✓ `open()` / `close()` -- Datei öffnen und schließen  
+✓ Modi `r`, `w`, `a` -- lesen, überschreiben, anhängen  
 ✓ `write()` -- Strings in eine Datei schreiben  
-✓ `read()` / Zeile-fuer-Zeile mit `for`  
-✓ `with`-Block -- garantiertes Schliessen  
+✓ `read()` / Zeile-für-Zeile mit `for`  
+✓ `with`-Block -- garantiertes Schließen  
 ✓ Absolute vs. relative Pfade  
 ✓ `try` / `except FileNotFoundError` -- robust gegen fehlende Dateien  
 
 ::: exercisebox
 **✎ Zur Vertiefung im Notebook 12:**
 
-- Angeleitete Uebungen 1.1, 1.2, 2.1, 2.2, 3.1, 3.2, 4.1, 4.2 (sind Sie schon mitgegangen)
+- Angeleitete Übungen 1.1, 1.2, 2.1, 2.2, 3.1, 3.2, 4.1, 4.2 (sind Sie schon mitgegangen)
 - Abschnitt zum `with`-Statement -- Notebook 12, Kap. "Sicheres Arbeiten"
-- Abschlussuebungen am Notebook-Ende mit Musterloesungen
+- Abschlussübungen am Notebook-Ende mit Musterlösungen
 :::

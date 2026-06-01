@@ -30,8 +30,8 @@ print(" Max' Liste:        ", bestellung_max)
 
 # Praktischer Einsatz von is: gegen None testen
 keine_lieferadresse = None
-print("\nLieferadresse fehlt?  ", keine_lieferadresse is None)
-print("Lieferadresse vorhanden?", keine_lieferadresse is not None)
+print("\nLieferadresse fehlt?  ", keine_lieferadresse == None)
+print("Lieferadresse vorhanden?", keine_lieferadresse != None)
 
 # Faustregel:
 # - Werte vergleichen  -> immer ==

@@ -41,7 +41,7 @@ header-includes:
 ## Ohne Verzweigung -- Programm ist starr
 
 ```python
-print("Versand: 4.95 EUR")    # immer gleich, egal wie gross der Warenkorb
+print("Versand: 4.95 EUR")    # immer gleich
 ```
 
 ## Mit Verzweigung -- Programm reagiert
@@ -67,19 +67,23 @@ if bestand < 5:
 
 ## Bestandteile
 
-- `if` -- Schluesselwort
+- `if` -- Schlüsselwort
 - `bestand < 5` -- **Bedingung**, liefert `True`/`False` (NB 08)
-- `:` -- Doppelpunkt schliesst die Bedingung ab
-- **Einrueckung** (4 Leerzeichen) -- markiert was zur if-Anweisung gehoert
+- `:` -- Doppelpunkt schließt die Bedingung ab
+- **Einrückung** (4 Leerzeichen) -- markiert was zur if-Anweisung gehört
 
-> Bedingung **wahr** $\to$ Block laeuft. Bedingung **falsch** $\to$ Block wird uebersprungen.
+> Bedingung **wahr** $\to$ Block läuft. Bedingung **falsch** $\to$ Block wird übersprungen.
+
+---
+
+# `if` -- Demo & Übung
 
 ::: demobox
 **▶ Live-Demo** -- `01_if_einfach.py`
 :::
 
 ::: exercisebox
-**✎ Sofort ausprobieren** -- Notebook 09, Kap. 2: Volljaehrigkeit, Notentest, Passwort-Pruefung
+**✎ Sofort ausprobieren** -- Notebook 09, Kap. 2: Volljährigkeit, Notentest, Passwort-Prüfung
 :::
 
 ---
@@ -88,16 +92,16 @@ if bestand < 5:
 
 ```python
 if bestellsumme >= 50:
-    print("versandfrei")           # gehoert zum if
-    print("Geschenk dazu")         # gehoert zum if
-print("Vielen Dank!")              # laeuft IMMER
+    print("versandfrei")           # gehört zum if
+    print("Geschenk dazu")         # gehört zum if
+print("Vielen Dank!")              # läuft IMMER
 ```
 
-- Python erkennt Bloecke an der **Einrueckung**
+- Python erkennt Blöcke an der **Einrückung**
 - Konvention: **4 Leerzeichen**, keine Tabs
-- `IndentationError`, wenn die Einrueckung nicht passt
+- `IndentationError`, wenn die Einrückung nicht passt
 
-> Andere Sprachen nutzen `{ }` -- Python nutzt **Leerzeichen**. Saubere Optik = lauffaehiger Code.
+> Andere Sprachen nutzen `{ }` -- Python nutzt **Leerzeichen**. Saubere Optik = lauffähiger Code.
 
 ---
 
@@ -110,16 +114,16 @@ else:
     print("Versand: 4.95 EUR")
 ```
 
-- **Genau einer** der beiden Bloecke laeuft
-- `else` braucht keine eigene Bedingung -- "alles uebrige"
-- Auch hier: Doppelpunkt + Einrueckung
+- **Genau einer** der beiden Blöcke läuft
+- `else` braucht keine eigene Bedingung -- "alles übrige"
+- Auch hier: Doppelpunkt + Einrückung
 
 ::: demobox
 **▶ Live-Demo** -- `02_if_else_versand.py`
 :::
 
 ::: exercisebox
-**✎ Sofort ausprobieren** -- Notebook 09, Kap. 3: gerade/ungerade, positiv/negativ, Volljaehrigkeit
+**✎ Sofort ausprobieren** -- Notebook 09, Kap. 3: gerade/ungerade, positiv/negativ, Volljährigkeit
 :::
 
 ---
@@ -135,11 +139,15 @@ else:
     rabatt = 0.0
 ```
 
-- Python prueft die `elif`-Bedingungen **der Reihe nach** von oben nach unten
-- Sobald eine wahr ist, laeuft ihr Block -- der Rest wird **uebersprungen**
-- `elif` so viele wie noetig
+- Python prüft die `elif`-Bedingungen **der Reihe nach** von oben nach unten
+- Sobald eine wahr ist, läuft ihr Block -- der Rest wird **übersprungen**
+- `elif` so viele wie nötig
 
 > **Wichtig**: Bedingungen **disjunkt** halten -- die spezifischste zuerst, die allgemeinste zuletzt.
+
+---
+
+# `elif` -- Live-Demo
 
 ::: demobox
 **▶ Live-Demo** -- `03_elif_rabattstufen.py`
@@ -159,14 +167,14 @@ else:
 ```
 
 - Operatoren aus Notebook 08 leben hier auf
-- Klammern erhoehen Lesbarkeit -- besonders bei `and`/`or`-Mix
+- Klammern erhöhen Lesbarkeit -- besonders bei `and`/`or`-Mix
 
 ::: demobox
 **▶ Live-Demo** -- `04_kombinierte_bedingungen.py`
 :::
 
 ::: exercisebox
-**✎ Sofort ausprobieren** -- Notebook 09, Kap. 4 (mehrere): Notenstufen, Wettervorhersage, Passwort-Staerke
+**✎ Sofort ausprobieren** -- Notebook 09, Kap. 4 (mehrere): Notenstufen, Wettervorhersage, Passwort-Stärke
 :::
 
 ---
@@ -180,16 +188,20 @@ match modell:
     case "Eco-Sneaker":
         print("Klassiker -- recyceltes Polyester")
     case "Hemp-High":
-        print("Knoechelhoch -- aus Hanf")
+        print("Knöchelhoch -- aus Hanf")
     case "Bambus-Boot":
         print("Winterfest -- Bambusfaser")
     case _:
         print("Modell nicht im Sortiment")
 ```
 
+---
+
+# `match-case` -- Bestandteile & Demo
+
 - `case _:` ist der **Default-Fall** (wie `else`)
-- Ideal fuer **gleichwertige, exakte** Vergleiche
-- Verfuegbar **ab Python 3.10**
+- Ideal für **gleichwertige, exakte** Vergleiche
+- Verfügbar **ab Python 3.10**
 
 ::: demobox
 **▶ Live-Demo** -- `05_match_case.py`
@@ -202,19 +214,25 @@ match modell:
 | Wann besser `match`? | Wann besser `if-elif`? |
 |---|---|
 | viele exakte Werte (`"A"`, `"B"`, ...) | Bereiche (`x < 18`, `x >= 65`) |
-| eine Variable, viele Faelle | mehrere Variablen kombiniert |
-| Code soll uebersichtlich bleiben | komplexe Bedingungen mit `and`/`or` |
+| eine Variable, viele Fälle | mehrere Variablen kombiniert |
+| Code soll übersichtlich bleiben | komplexe Bedingungen mit `and`/`or` |
 
 ```python
-# besser if-elif
+# besser if-elif -- Bereiche
 if alter < 18:    rabatt = 0.10
 elif alter > 65:  rabatt = 0.15
 else:             rabatt = 0.0
+```
 
-# besser match
+---
+
+# `match` vs. `if-elif` -- wann `match`?
+
+```python
+# besser match -- exakte Werte
 match plz_region:
     case "10": ort = "Berlin"
-    case "80": ort = "Muenchen"
+    case "80": ort = "München"
     case _:    ort = "unbekannt"
 ```
 
@@ -223,7 +241,7 @@ match plz_region:
 # Anti-Patterns
 
 ```python
-if storniert == True:        # ueberfluessig
+if storniert == True:        # überflüssig
     ...
 if storniert:                # so reicht's
     ...
@@ -236,7 +254,7 @@ if x == 5:                   # so meinte man's
 - `==` (Vergleich) und `=` (Zuweisung) **strikt** trennen
 - **Verschachtelte ifs** vermeiden, wenn `elif` reicht
 
-> Code, der **nichts Falsches macht**, ist gut. Code, der zusaetzlich **leicht zu lesen** ist, ist sehr gut.
+> Code, der **nichts Falsches macht**, ist gut. Code, der zusätzlich **leicht zu lesen** ist, ist sehr gut.
 
 ---
 
@@ -251,7 +269,7 @@ if x == 5:                   # so meinte man's
 | exakte Werte | `match x: case "a": ... case _: ...` |
 | Default-Fall | `case _:` |
 
-> **Faustregel**: zuerst Bedingung in Worten, dann in Python. Wenn Sie's nicht sagen koennen, koennen Sie's nicht programmieren.
+> **Faustregel**: zuerst Bedingung in Worten, dann in Python. Wenn Sie's nicht sagen können, können Sie's nicht programmieren.
 
 ---
 
@@ -264,18 +282,18 @@ for produkt in warenkorb:
     if produkt in lager:
         print(f"{produkt}: lieferbar")
     else:
-        print(f"{produkt}: nicht verfuegbar")
+        print(f"{produkt}: nicht verfügbar")
 ```
 
-Damit lassen sich ganze Warenkoerbe, Bestellungen, Listen pruefen -- nicht nur ein Eintrag.
+Damit lassen sich ganze Warenkörbe, Bestellungen, Listen prüfen -- nicht nur ein Eintrag.
 
 ---
 
 # Heute geübt
 
-✓ `if` -- bedingt ausfuehren  
+✓ `if` -- bedingt ausführen  
 ✓ `if-else` -- entweder / oder  
-✓ `elif` -- mehrstufig pruefen  
+✓ `elif` -- mehrstufig prüfen  
 ✓ Bedingungen mit `and`/`or`/`not` kombinieren  
 ✓ `match-case` -- exakte Werte elegant verzweigen  
 ✓ Klassiker-Fallen `=` vs. `==` und `== True` umgangen  
@@ -284,6 +302,6 @@ Damit lassen sich ganze Warenkoerbe, Bestellungen, Listen pruefen -- nicht nur e
 **✎ Zur Vertiefung im Notebook 09:**
 
 - "Sofort ausprobieren"-Aufgaben in Kap. 2-4 + Kap. 6 (sind Sie schon mitgegangen)
-- Praktische Uebung Kap. 5 / 7: Maschinenauslastung, mehrere Maschinen
+- Praktische Übung Kap. 5 / 7: Maschinenauslastung, mehrere Maschinen
 - Trainingsmaterial mit gestuften Aufgaben am Notebook-Ende
 :::
