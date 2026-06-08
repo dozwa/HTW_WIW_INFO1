@@ -57,7 +57,9 @@ print(f"Summe: {gesamt} EUR")
 
 ---
 
-# Motivation: Mit Struktur
+# Motivation: Mit Struktur (1/2)
+
+## Erst die Bausteine -- jeder mit genau einer Aufgabe
 
 ```python
 def bestand_anzeigen(shop):
@@ -69,7 +71,15 @@ def gesamtwert(shop):
     for preis in shop.values():
         gesamt = gesamt + preis
     return gesamt
+```
 
+---
+
+# Motivation: Mit Struktur (2/2)
+
+## ... dann `main()` als Zusammenfassung des Ablaufs
+
+```python
 def main():
     shop = {"Eco-Sneaker": 89.95, "Hemp-High": 109.00}
     bestand_anzeigen(shop)
@@ -117,8 +127,7 @@ def bericht_erstellen(shop):
     print(f"Lagerwert: {summe:.2f} EUR")
 ```
 
-- `bericht_erstellen` muss **nicht wissen**, *wie* der Bestand angezeigt wird
-- Sie delegiert -- die Details stecken in `bestand_anzeigen`
+- `bericht_erstellen` **delegiert** -- es kennt die Details nicht
 - Das nennt man **Abstraktion**: Schichten von Bedeutung
 
 ::: demobox
@@ -126,7 +135,7 @@ def bericht_erstellen(shop):
 :::
 
 ::: exercisebox
-**✎ Sofort ausprobieren** -- Notebook 15, Kap. 2: Übung 2.2 (`notenbericht_erstellen` kombiniert die drei Funktionen)
+**✎ Sofort ausprobieren** -- Notebook 15, Kap. 2: Übung 2.2
 :::
 
 ---
@@ -144,7 +153,7 @@ def main():
 main()
 ```
 
-- **Steuert den Ablauf** -- ruft Hilfsfunktionen in der richtigen Reihenfolge auf
+- **Steuert den Ablauf** -- ruft Hilfsfunktionen der Reihe nach auf
 - **Enthält selbst wenig Logik** -- die steckt in den Hilfsfunktionen
 - **Liest sich wie eine Zusammenfassung** Ihres Programms
 
@@ -187,7 +196,12 @@ if __name__ == "__main__":
     main()
 ```
 
-- `__name__` ist eine **eingebaute Variable**
+> `__name__` ist eine **eingebaute Variable**, die Python automatisch setzt.
+
+---
+
+# `if __name__` -- was passiert wann?
+
 - Direkter Aufruf (`python shop_utils.py`): `__name__` $=$ `"__main__"` → `main()` läuft
 - Import (`import shop_utils`): `__name__` $=$ `"shop_utils"` → `main()` läuft **nicht**
 
@@ -223,7 +237,9 @@ if __name__ == "__main__":
 
 ---
 
-# Vollständiges Beispiel -- Veggie Soles
+# Vollständiges Beispiel -- Veggie Soles (1/2)
+
+## Bausteine 1-3: Imports, Konstanten, Hilfsfunktionen
 
 ```python
 # --- 1. Imports ---
@@ -238,15 +254,21 @@ def versand_berechnen(summe):
     if summe >= FREI_AB:
         return 0.0
     return VERSANDPAUSCHALE
+```
 
-# --- 4. main() ---
+---
+
+# Vollständiges Beispiel -- Veggie Soles (2/2)
+
+## Bausteine 4-5: `main()` und Einstiegspunkt
+
+```python
 def main():
     bestellung = [89.95, 109.00]
     summe = sum(bestellung)
     versand = versand_berechnen(summe)
-    print(f"Summe: {summe:.2f} EUR, Versand: {versand:.2f} EUR")
+    print(f"Summe: {summe:.2f}, Versand: {versand:.2f}")
 
-# --- 5. Einstiegspunkt ---
 if __name__ == "__main__":
     main()
 ```
@@ -256,7 +278,7 @@ if __name__ == "__main__":
 :::
 
 ::: exercisebox
-**✎ Sofort ausprobieren** -- Notebook 15, Kap. 5: Übung 5.1 (Einkaufsliste), Kap. 6: Übung 6.1 (Lohnberechnung in 5-Bausteine-Struktur)
+**✎ Sofort ausprobieren** -- Notebook 15, Kap. 5 & 6: Übung 5.1, 6.1
 :::
 
 ---
