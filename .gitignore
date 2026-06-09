@@ -19,7 +19,27 @@ QM-V01-Folien.md
 *_Referenz.md
 Recherchen/
 Sprecherskripte/
-docs/workflow_lehrmaterial.md
+
+# Generierung / Build-Werkzeuge (nicht im öffentlichen Studierenden-Repo)
+docs/
+Makefile
+tools/
 
 # Jupyter
 .ipynb_checkpoints/
+
+# Tests
+Tests/
+
+# Klausuren
+
+Klausuren/
+KlausurSystem/
+
+# Alle src-Verzeichnisse
+Klausuren_src/
+Notebooks_src/
+Cheat_Sheets_src/
+Grafiken_src/
+Praesentationen_src/
+Uebungen_src/
