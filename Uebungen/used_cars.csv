@@ -1,0 +1,501 @@
+brand,model,year,price,transmission,mileage,fuelType,tax,mpg,engineSize
+Audi,A1,2017,12500,Manual,15735,Petrol,150,55.4,1.4
+Audi,A6,2016,16500,Automatic,36203,Diesel,20,64.2,2.0
+Audi,A1,2016,11000,Manual,29946,Petrol,30,55.4,1.4
+Audi,A4,2017,16800,Automatic,25952,Diesel,145,67.3,2.0
+Audi,A3,2016,17300,Manual,23254,Petrol,145,49.6,1.4
+Audi,A1,2016,13900,Manual,32260,Petrol,30,58.9,1.0
+Audi,A4,2016,13250,Automatic,76788,Diesel,30,70.6,2.0
+Audi,A3,2019,17000,Manual,12456,Petrol,145,49.6,1.0
+Audi,A3,2019,16100,Manual,15650,Petrol,145,49.6,1.0
+Audi,A1,2019,15000,Manual,9560,Petrol,145,47.9,1.0
+Audi,A1,2017,16470,Semi-Auto,34727,Diesel,145,59.8,1.4
+Audi,Q3,2017,20020,Automatic,35436,Petrol,145,44.0,2.0
+Audi,Q5,2019,27270,Semi-Auto,13325,Diesel,145,59.0,1.4
+Audi,A1,2017,21640,Semi-Auto,32609,Petrol,145,46.4,1.5
+Audi,A1,2015,12950,Semi-Auto,46973,Petrol,30,53.8,2.0
+Audi,A5,2019,25240,Manual,14241,Petrol,145,50.5,2.0
+Audi,Q3,2018,21070,Manual,20341,Petrol,145,43.9,2.0
+Audi,A6,2017,19690,Automatic,28758,Petrol,145,47.6,2.0
+Audi,Q5,2016,15080,Automatic,32083,Diesel,30,66.8,2.0
+Audi,A3,2019,23340,Manual,17040,Petrol,145,47.3,2.0
+Audi,A6,2015,14340,Automatic,47668,Diesel,30,59.0,2.0
+Audi,A5,2016,15010,Semi-Auto,31140,Diesel,145,59.4,3.0
+Audi,A3,2018,21110,Automatic,16965,Diesel,145,49.9,1.5
+Audi,Q3,2017,17890,Automatic,27332,Petrol,145,50.2,2.0
+Audi,A1,2014,13230,Automatic,57086,Diesel,20,72.2,2.0
+Audi,A6,2015,12460,Automatic,42503,Petrol,0,39.7,2.0
+Audi,A5,2014,12050,Automatic,67082,Petrol,125,51.9,1.5
+Audi,Q3,2017,22710,Semi-Auto,27233,Hybrid,135,70.9,2.0
+Audi,A4,2018,23170,Semi-Auto,21804,Petrol,145,41.7,1.4
+Audi,A1,2017,16780,Semi-Auto,42306,Petrol,145,52.7,2.0
+Audi,Q5,2020,28850,Semi-Auto,7553,Hybrid,135,73.2,2.0
+Audi,A3,2020,29250,Semi-Auto,4447,Diesel,145,69.7,1.4
+Audi,Q3,2016,18410,Semi-Auto,32365,Diesel,20,59.3,2.0
+Audi,Q3,2019,23660,Automatic,21329,Petrol,145,48.9,1.4
+Audi,A3,2015,13690,Semi-Auto,51141,Diesel,125,55.9,2.0
+Audi,A3,2018,22640,Automatic,14804,Diesel,145,59.7,2.0
+Audi,A5,2020,29310,Automatic,4250,Diesel,145,54.4,1.4
+Audi,A6,2016,14490,Semi-Auto,52946,Petrol,125,45.9,1.4
+Audi,A6,2019,22880,Semi-Auto,10002,Petrol,145,65.5,2.0
+Audi,A1,2016,13590,Automatic,45281,Petrol,20,41.0,2.0
+Audi,Q3,2014,12460,Semi-Auto,49656,Petrol,30,48.3,3.0
+Audi,Q3,2015,12380,Manual,45531,Diesel,0,63.6,1.4
+Audi,A5,2018,21430,Semi-Auto,22954,Petrol,145,52.2,1.4
+Audi,A6,2016,16110,Manual,50612,Petrol,30,51.8,1.4
+Audi,A1,2014,12770,Semi-Auto,58740,Diesel,205,58.7,2.0
+Audi,Q3,2018,21800,Semi-Auto,20493,Petrol,145,35.0,1.5
+Audi,A6,2016,16520,Manual,37054,Petrol,30,56.0,1.5
+Audi,A6,2016,17920,Semi-Auto,33309,Diesel,125,70.2,2.0
+Audi,Q5,2018,20070,Semi-Auto,26653,Petrol,145,41.8,2.0
+Audi,Q3,2019,28420,Manual,13987,Diesel,145,51.0,1.4
+Audi,Q5,2019,22420,Automatic,21911,Petrol,145,41.5,1.4
+Audi,Q5,2018,17660,Automatic,18512,Petrol,145,50.5,2.0
+Audi,A5,2018,24160,Semi-Auto,18848,Diesel,145,67.9,2.0
+Audi,A5,2018,21660,Automatic,27976,Petrol,145,49.0,1.4
+BMW,X3,2020,27990,Semi-Auto,4000,Petrol,145,51.4,2.0
+BMW,1 Series,2016,17420,Manual,46409,Petrol,150,48.6,1.4
+BMW,3 Series,2018,19960,Automatic,22693,Petrol,145,44.4,1.5
+BMW,5 Series,2020,29730,Automatic,6619,Petrol,145,53.2,1.4
+BMW,5 Series,2018,25290,Manual,22860,Hybrid,135,67.1,1.4
+BMW,X3,2019,24900,Manual,18112,Petrol,145,55.8,2.0
+BMW,X3,2016,18070,Semi-Auto,26265,Diesel,145,69.6,2.0
+BMW,X1,2013,10700,Semi-Auto,60367,Diesel,145,56.1,1.4
+BMW,X1,2015,16370,Automatic,45630,Petrol,0,42.7,1.4
+BMW,X1,2020,28490,Semi-Auto,4000,Diesel,145,57.4,2.0
+BMW,2 Series,2017,16850,Semi-Auto,32590,Diesel,145,59.7,3.0
+BMW,5 Series,2015,16590,Manual,46878,Diesel,20,63.1,1.5
+BMW,5 Series,2018,19390,Automatic,21957,Diesel,145,54.2,1.4
+BMW,3 Series,2016,14950,Automatic,49754,Diesel,145,60.0,2.0
+BMW,5 Series,2019,30650,Automatic,19451,Petrol,145,60.0,2.0
+BMW,2 Series,2020,30740,Semi-Auto,4787,Petrol,145,54.7,2.0
+BMW,X1,2016,17730,Semi-Auto,41596,Diesel,0,48.1,2.0
+BMW,1 Series,2016,14430,Automatic,44023,Petrol,205,66.9,2.0
+BMW,3 Series,2018,22450,Manual,13514,Petrol,145,52.4,1.4
+BMW,2 Series,2015,13070,Semi-Auto,52537,Petrol,205,48.7,2.0
+BMW,X3,2014,13890,Manual,56823,Diesel,20,58.9,1.4
+BMW,3 Series,2016,17970,Automatic,42606,Petrol,0,38.2,2.0
+BMW,X3,2018,20470,Automatic,20706,Diesel,145,66.6,2.0
+BMW,5 Series,2017,18660,Automatic,32230,Petrol,145,42.8,1.5
+BMW,5 Series,2017,19470,Manual,25711,Petrol,145,56.3,1.4
+BMW,3 Series,2013,10930,Automatic,61008,Diesel,0,63.8,2.0
+BMW,5 Series,2020,30100,Semi-Auto,12449,Petrol,145,41.9,2.0
+BMW,5 Series,2019,23770,Semi-Auto,17529,Diesel,145,73.3,3.0
+BMW,1 Series,2018,24480,Automatic,13015,Hybrid,135,77.7,2.0
+BMW,2 Series,2020,28040,Semi-Auto,7934,Diesel,145,65.8,2.0
+BMW,2 Series,2016,16790,Semi-Auto,42059,Diesel,145,56.4,2.0
+BMW,1 Series,2019,24710,Manual,14929,Petrol,145,51.9,2.0
+BMW,5 Series,2016,15280,Semi-Auto,36835,Petrol,30,67.8,1.5
+BMW,1 Series,2018,20300,Manual,20392,Petrol,145,53.7,2.0
+BMW,3 Series,2020,31100,Semi-Auto,6045,Diesel,145,53.1,2.0
+BMW,X1,2016,16430,Automatic,36952,Petrol,0,54.1,1.4
+BMW,2 Series,2018,21860,Automatic,28768,Petrol,145,47.6,2.0
+BMW,3 Series,2016,16200,Semi-Auto,30213,Petrol,125,51.9,1.5
+BMW,X3,2016,17020,Automatic,41021,Petrol,145,48.8,2.0
+BMW,2 Series,2017,18150,Semi-Auto,37484,Petrol,145,46.6,2.0
+BMW,2 Series,2018,24010,Semi-Auto,19763,Diesel,145,56.2,1.4
+BMW,1 Series,2016,16500,Automatic,33799,Petrol,0,42.8,1.5
+BMW,X1,2018,23600,Manual,17091,Diesel,145,66.9,2.0
+BMW,1 Series,2013,9370,Automatic,63441,Petrol,145,42.8,1.5
+BMW,2 Series,2016,18850,Automatic,30868,Petrol,150,42.0,2.0
+BMW,2 Series,2018,24480,Semi-Auto,22420,Hybrid,135,73.1,1.4
+BMW,X1,2014,13920,Automatic,43740,Diesel,150,62.7,2.0
+BMW,1 Series,2018,22090,Semi-Auto,24939,Petrol,145,42.9,2.0
+BMW,X3,2016,17620,Automatic,34035,Diesel,20,66.4,1.5
+BMW,X3,2014,12400,Manual,57974,Diesel,145,73.8,2.0
+BMW,X1,2020,26690,Manual,12528,Diesel,145,62.4,3.0
+BMW,2 Series,2013,11450,Manual,64161,Petrol,150,50.3,2.0
+BMW,1 Series,2016,17420,Semi-Auto,34996,Petrol,150,49.1,2.0
+BMW,5 Series,2016,15270,Automatic,44742,Diesel,30,64.7,2.0
+BMW,X1,2019,25620,Semi-Auto,6756,Petrol,145,51.8,2.0
+Ford,Kuga,2014,7750,Manual,57812,Petrol,205,46.6,1.0
+Ford,Mondeo,2020,18390,Manual,4000,Petrol,145,49.2,1.6
+Ford,Mondeo,2018,13220,Semi-Auto,24277,Diesel,145,55.7,1.0
+Ford,Fiesta,2019,18130,Semi-Auto,11752,Petrol,145,50.9,1.2
+Ford,Focus,2018,13170,Manual,26782,Petrol,145,56.4,1.2
+Ford,Focus,2015,7430,Semi-Auto,49451,Petrol,20,39.9,1.6
+Ford,Focus,2020,17750,Manual,4000,Diesel,145,61.7,1.0
+Ford,Fiesta,2020,18280,Manual,5446,Diesel,145,61.3,2.0
+Ford,Kuga,2020,16530,Manual,10312,Petrol,145,58.7,1.4
+Ford,Kuga,2019,16040,Manual,9018,Diesel,145,69.3,1.4
+Ford,Fiesta,2018,13730,Automatic,24733,Petrol,145,61.1,2.0
+Ford,Kuga,2020,17250,Manual,4000,Petrol,145,53.9,1.2
+Ford,Fiesta,2018,14080,Manual,28466,Diesel,145,48.8,1.0
+Ford,Fiesta,2020,18100,Manual,4000,Petrol,145,48.4,1.0
+Ford,Mondeo,2015,9940,Manual,50065,Petrol,125,41.9,1.2
+Ford,Mondeo,2014,7910,Manual,57263,Diesel,30,59.5,1.0
+Ford,Fiesta,2020,18890,Semi-Auto,7205,Petrol,145,41.9,1.0
+Ford,Mondeo,2019,17430,Semi-Auto,25936,Petrol,145,43.0,1.4
+Ford,Focus,2013,6300,Manual,57093,Diesel,20,60.0,1.4
+Ford,Kuga,2020,17750,Manual,4000,Petrol,145,53.1,2.0
+Ford,Focus,2016,10500,Manual,40362,Petrol,30,52.3,1.6
+Ford,Focus,2017,13610,Automatic,27944,Petrol,145,49.2,1.4
+Ford,Mondeo,2018,13610,Manual,22766,Petrol,145,47.1,1.4
+Ford,Focus,2014,8020,Manual,59785,Petrol,30,60.1,1.6
+Ford,Fiesta,2019,15670,Manual,7852,Diesel,145,66.3,1.6
+Ford,Mondeo,2015,8510,Automatic,50988,Petrol,30,50.0,1.2
+Ford,Mondeo,2020,17500,Semi-Auto,6215,Diesel,145,68.9,1.4
+Ford,Fiesta,2019,16140,Manual,8348,Petrol,145,44.0,2.0
+Ford,Mondeo,2020,18050,Automatic,4000,Petrol,145,67.1,1.4
+Ford,EcoSport,2018,13460,Manual,24361,Petrol,145,46.8,2.0
+Ford,Focus,2015,9160,Automatic,47268,Diesel,20,60.6,1.0
+Ford,Fiesta,2020,22480,Semi-Auto,4000,Petrol,145,60.0,1.0
+Ford,Focus,2015,8860,Automatic,49979,Diesel,20,51.2,1.0
+Ford,Fiesta,2017,11210,Semi-Auto,30646,Petrol,145,49.5,1.0
+Ford,Kuga,2018,14200,Manual,27455,Petrol,145,53.6,1.2
+Ford,Focus,2019,17880,Automatic,9229,Diesel,145,53.9,2.0
+Ford,EcoSport,2015,8570,Manual,48034,Diesel,0,65.2,1.0
+Ford,Fiesta,2019,15750,Manual,12587,Petrol,145,35.3,1.6
+Ford,Kuga,2017,13190,Automatic,26827,Hybrid,135,72.4,1.6
+Ford,Focus,2019,14850,Automatic,23053,Diesel,145,66.8,1.0
+Ford,Kuga,2015,8850,Semi-Auto,53204,Petrol,20,46.1,1.4
+Ford,Mondeo,2019,14090,Automatic,21701,Diesel,145,60.2,1.6
+Ford,Focus,2017,11560,Manual,25865,Petrol,145,42.0,1.4
+Ford,EcoSport,2016,9610,Manual,38633,Petrol,30,52.9,1.2
+Ford,Focus,2017,13370,Manual,26198,Hybrid,135,69.8,1.4
+Ford,EcoSport,2020,19080,Manual,13524,Petrol,145,63.7,1.0
+Ford,Fiesta,2018,13480,Manual,30267,Hybrid,135,74.9,1.0
+Ford,EcoSport,2016,12200,Manual,35182,Diesel,145,58.6,2.0
+Ford,Mondeo,2020,15050,Manual,4000,Diesel,145,71.3,1.6
+Ford,Fiesta,2017,13680,Manual,34904,Hybrid,135,68.0,1.4
+Ford,Mondeo,2019,16050,Manual,10577,Petrol,145,44.5,1.0
+Ford,EcoSport,2015,7970,Manual,56135,Petrol,30,57.3,1.4
+Ford,Focus,2020,19770,Manual,4000,Diesel,145,56.4,1.6
+Ford,Focus,2016,11540,Manual,43359,Petrol,145,50.7,1.2
+Ford,Kuga,2017,12470,Manual,30327,Petrol,145,54.2,1.0
+Ford,EcoSport,2016,10200,Manual,41151,Petrol,145,52.5,1.0
+Ford,Mondeo,2019,16230,Automatic,4000,Petrol,145,40.7,2.0
+Ford,Mondeo,2017,9800,Manual,31533,Petrol,145,55.9,2.0
+Ford,Focus,2019,13370,Automatic,7233,Petrol,145,55.3,1.4
+Ford,EcoSport,2018,12220,Automatic,28880,Petrol,145,45.3,1.2
+Ford,Mondeo,2016,10300,Manual,49199,Diesel,145,56.7,1.6
+Ford,Fiesta,2018,11920,Manual,23358,Petrol,145,55.2,1.2
+Ford,Focus,2014,7790,Semi-Auto,60920,Petrol,0,54.6,2.0
+Ford,Mondeo,2017,12630,Semi-Auto,32952,Hybrid,135,88.2,1.0
+Ford,EcoSport,2018,14160,Automatic,27137,Diesel,145,64.5,1.6
+Ford,Mondeo,2017,11550,Manual,27810,Petrol,145,37.9,1.2
+Ford,Fiesta,2015,9730,Semi-Auto,49673,Petrol,145,39.4,2.0
+Ford,EcoSport,2020,18580,Semi-Auto,4966,Petrol,145,60.3,1.6
+Ford,Mondeo,2017,11970,Manual,28854,Petrol,145,42.4,1.6
+Ford,EcoSport,2020,20920,Manual,13225,Hybrid,135,85.0,1.2
+Ford,Kuga,2017,11450,Manual,33765,Diesel,145,58.6,1.0
+Ford,Fiesta,2020,17570,Automatic,8684,Diesel,145,51.0,2.0
+Ford,Kuga,2016,11150,Semi-Auto,34413,Diesel,30,60.5,1.4
+Ford,Kuga,2016,10880,Manual,40097,Petrol,145,55.2,2.0
+Ford,Fiesta,2015,9100,Manual,42824,Petrol,30,35.0,1.4
+Ford,Kuga,2017,11650,Manual,32583,Diesel,145,78.3,1.4
+Ford,Kuga,2020,21390,Automatic,4000,Hybrid,135,69.2,1.4
+Ford,Kuga,2019,17040,Semi-Auto,14099,Petrol,145,44.0,1.4
+Ford,EcoSport,2019,14020,Automatic,13821,Petrol,145,50.8,1.0
+Ford,Focus,2019,14020,Manual,12550,Diesel,145,73.9,1.2
+Ford,EcoSport,2017,11050,Manual,31230,Petrol,145,40.4,1.0
+Ford,Focus,2016,9350,Manual,38975,Petrol,125,52.3,1.6
+Ford,Focus,2019,17750,Manual,7101,Diesel,145,60.5,1.2
+Ford,EcoSport,2019,16160,Manual,24586,Diesel,145,48.0,1.2
+Ford,Focus,2019,13490,Semi-Auto,9668,Petrol,145,35.0,2.0
+Ford,Mondeo,2019,17280,Manual,19533,Hybrid,135,76.3,1.4
+Ford,Mondeo,2017,10800,Automatic,35998,Diesel,145,50.2,2.0
+Ford,EcoSport,2020,20120,Semi-Auto,9719,Diesel,145,49.5,1.4
+Ford,Mondeo,2016,9590,Semi-Auto,41275,Diesel,30,52.4,1.6
+Ford,EcoSport,2015,8470,Manual,52050,Diesel,145,54.0,1.2
+Hyundai,I10,2016,10080,Manual,32700,Diesel,30,60.5,1.6
+Hyundai,I30,2019,17890,Semi-Auto,6656,Hybrid,135,74.4,1.2
+Hyundai,I20,2017,11990,Automatic,33626,Hybrid,135,55.6,1.0
+Hyundai,I10,2016,9420,Automatic,31474,Petrol,205,53.2,1.4
+Hyundai,I10,2020,18030,Manual,13777,Petrol,145,40.0,1.0
+Hyundai,I20,2016,9090,Manual,40173,Petrol,30,49.7,1.0
+Hyundai,I20,2020,17160,Manual,8026,Petrol,145,54.0,1.4
+Hyundai,I20,2015,6580,Manual,48658,Petrol,0,57.5,1.2
+Hyundai,Tucson,2018,13650,Automatic,22902,Petrol,145,56.8,2.0
+Hyundai,I10,2019,15220,Manual,16366,Diesel,145,62.4,1.4
+Hyundai,I30,2017,12010,Automatic,29617,Petrol,145,47.3,1.4
+Hyundai,Tucson,2019,17670,Manual,4000,Petrol,145,49.3,1.4
+Hyundai,I10,2020,17240,Automatic,4000,Petrol,145,49.4,2.0
+Hyundai,I20,2016,10170,Automatic,37849,Diesel,150,60.0,1.2
+Hyundai,Tucson,2018,13310,Semi-Auto,19142,Diesel,145,63.7,1.2
+Hyundai,I20,2014,6840,Manual,47451,Petrol,125,46.7,1.2
+Hyundai,Tucson,2016,9000,Automatic,40219,Petrol,145,51.7,1.4
+Hyundai,I10,2018,10170,Manual,27737,Petrol,145,49.2,2.0
+Hyundai,I20,2020,15060,Manual,4000,Diesel,145,52.2,1.0
+Hyundai,I10,2014,6700,Automatic,56636,Petrol,145,49.4,1.4
+Hyundai,Tucson,2017,9850,Manual,22669,Diesel,145,56.3,1.2
+Hyundai,I20,2016,9840,Semi-Auto,41886,Diesel,0,64.2,1.2
+Hyundai,I10,2015,7760,Manual,43340,Petrol,30,54.4,1.4
+Hyundai,I20,2018,11940,Manual,22487,Petrol,145,42.6,1.4
+Mercedes,E Class,2014,15990,Manual,60731,Diesel,150,58.8,2.0
+Mercedes,GLA Class,2017,20540,Automatic,36757,Petrol,145,60.2,1.4
+Mercedes,C Class,2017,23100,Semi-Auto,17199,Petrol,145,38.9,1.4
+Mercedes,C Class,2014,12880,Semi-Auto,56056,Diesel,0,59.7,1.4
+Mercedes,A Class,2020,30970,Automatic,4000,Diesel,145,62.6,1.5
+Mercedes,A Class,2017,17230,Automatic,30818,Petrol,145,50.0,1.5
+Mercedes,GLA Class,2017,19890,Semi-Auto,34253,Petrol,145,55.4,1.5
+Mercedes,C Class,2019,25280,Semi-Auto,17305,Petrol,145,55.2,1.5
+Mercedes,E Class,2016,17730,Automatic,41380,Petrol,30,60.3,1.5
+Mercedes,C Class,2015,13530,Manual,52434,Petrol,145,42.2,1.4
+Mercedes,C Class,2016,17400,Manual,35571,Petrol,0,45.2,1.4
+Mercedes,A Class,2015,14190,Manual,39916,Diesel,150,64.0,1.4
+Mercedes,GLA Class,2015,15440,Manual,51331,Petrol,145,45.7,2.0
+Mercedes,GLA Class,2017,17660,Manual,34614,Diesel,145,72.0,2.0
+Mercedes,GLA Class,2013,10680,Semi-Auto,53556,Petrol,150,53.8,1.4
+Mercedes,GLA Class,2018,25920,Automatic,10241,Hybrid,135,75.2,1.4
+Mercedes,C Class,2019,27280,Semi-Auto,10549,Petrol,145,41.9,1.4
+Mercedes,GLA Class,2020,32910,Semi-Auto,7495,Petrol,145,58.3,2.0
+Mercedes,GLA Class,2016,15420,Manual,44739,Diesel,145,48.5,2.0
+Mercedes,E Class,2016,19050,Manual,35892,Petrol,20,47.2,3.0
+Mercedes,E Class,2018,21820,Manual,14674,Diesel,145,56.4,3.0
+Mercedes,A Class,2018,22820,Automatic,10107,Diesel,145,55.9,2.0
+Mercedes,C Class,2019,27790,Semi-Auto,14949,Petrol,145,56.4,3.0
+Mercedes,C Class,2014,12880,Manual,57003,Petrol,145,53.4,1.5
+Mercedes,E Class,2015,15070,Automatic,45232,Diesel,0,73.9,1.5
+Mercedes,C Class,2014,13670,Automatic,57295,Diesel,150,62.2,2.0
+Mercedes,E Class,2018,22230,Manual,20505,Diesel,145,64.7,3.0
+Mercedes,C Class,2018,23490,Semi-Auto,22583,Petrol,145,65.5,1.4
+Mercedes,A Class,2017,22200,Manual,32987,Diesel,145,54.2,2.0
+Mercedes,E Class,2017,20300,Automatic,40374,Diesel,145,57.4,2.0
+Mercedes,C Class,2020,31490,Semi-Auto,5180,Diesel,145,51.7,1.5
+Mercedes,C Class,2016,17090,Automatic,36470,Petrol,0,50.8,1.5
+Mercedes,GLA Class,2018,25140,Automatic,27581,Diesel,145,75.4,2.0
+Mercedes,E Class,2019,24750,Manual,17232,Petrol,145,41.4,1.4
+Mercedes,C Class,2016,16920,Automatic,41115,Petrol,145,42.3,3.0
+Mercedes,C Class,2015,15000,Automatic,49688,Petrol,0,53.7,1.5
+Mercedes,C Class,2013,11350,Manual,56861,Diesel,30,53.0,1.5
+Mercedes,C Class,2016,18440,Manual,34066,Diesel,145,69.2,3.0
+Mercedes,C Class,2017,20910,Semi-Auto,28026,Petrol,145,50.9,2.0
+Mercedes,A Class,2019,30470,Semi-Auto,18389,Diesel,145,50.0,2.0
+Mercedes,GLA Class,2013,12710,Semi-Auto,63061,Petrol,0,51.5,2.0
+Mercedes,GLA Class,2017,20530,Automatic,31692,Diesel,145,63.5,2.0
+Mercedes,A Class,2016,17780,Automatic,39343,Diesel,20,77.4,2.0
+Mercedes,E Class,2019,28070,Semi-Auto,14139,Petrol,145,47.5,2.0
+Mercedes,C Class,2015,15100,Semi-Auto,49355,Petrol,20,52.8,2.0
+Mercedes,C Class,2018,26510,Automatic,27251,Hybrid,135,77.1,1.4
+Mercedes,A Class,2020,29550,Semi-Auto,6333,Diesel,145,56.8,1.4
+Mercedes,E Class,2020,32990,Manual,8285,Petrol,145,69.7,3.0
+Mercedes,A Class,2020,30980,Manual,4000,Petrol,145,52.3,1.5
+Mercedes,C Class,2014,15320,Semi-Auto,59416,Petrol,0,43.0,2.0
+Mercedes,E Class,2019,28640,Automatic,12930,Diesel,145,55.5,1.5
+Mercedes,E Class,2016,18100,Automatic,28890,Diesel,30,58.2,2.0
+Mercedes,C Class,2016,17150,Semi-Auto,42426,Petrol,145,54.3,2.0
+Mercedes,GLA Class,2020,32540,Manual,12204,Hybrid,135,72.1,2.0
+Mercedes,E Class,2018,24260,Semi-Auto,13929,Petrol,145,42.3,1.4
+Mercedes,A Class,2015,15450,Manual,59622,Petrol,30,61.1,1.5
+Mercedes,E Class,2014,12250,Automatic,55884,Petrol,205,44.4,2.0
+Mercedes,A Class,2016,16760,Manual,35687,Petrol,145,42.7,2.0
+Mercedes,C Class,2017,21600,Automatic,17503,Diesel,145,69.6,2.0
+Mercedes,E Class,2014,13670,Automatic,56860,Diesel,20,60.5,2.0
+Mercedes,GLA Class,2020,37090,Manual,7390,Hybrid,135,72.9,3.0
+Mercedes,C Class,2015,16900,Automatic,44594,Petrol,150,51.9,2.0
+Mercedes,A Class,2018,20520,Manual,25936,Petrol,145,58.0,2.0
+Mercedes,GLA Class,2018,22480,Manual,27202,Petrol,145,46.6,2.0
+Mercedes,C Class,2016,17080,Automatic,36709,Diesel,125,71.0,1.4
+Mercedes,E Class,2014,13480,Semi-Auto,63628,Petrol,30,52.8,1.5
+Skoda,Kodiaq,2017,10710,Manual,32907,Diesel,145,65.6,2.0
+Skoda,Octavia,2015,6940,Manual,53098,Petrol,0,46.6,1.6
+Skoda,Superb,2020,18420,Automatic,9689,Diesel,145,47.6,1.0
+Skoda,Fabia,2020,17660,Manual,4129,Diesel,145,66.4,1.6
+Skoda,Superb,2020,17100,Manual,4000,Petrol,145,61.0,1.6
+Skoda,Kodiaq,2016,10330,Manual,41741,Petrol,125,43.8,2.0
+Skoda,Kodiaq,2015,9070,Semi-Auto,46288,Petrol,145,53.5,1.6
+Skoda,Kodiaq,2019,13830,Automatic,12094,Petrol,145,45.7,1.4
+Skoda,Superb,2018,12970,Manual,28277,Petrol,145,52.2,1.4
+Skoda,Kodiaq,2013,6270,Automatic,63591,Petrol,145,52.0,1.6
+Skoda,Superb,2018,12640,Manual,25267,Diesel,145,45.4,1.6
+Skoda,Fabia,2018,14050,Manual,12734,Petrol,145,45.6,1.4
+Skoda,Octavia,2019,14150,Manual,4000,Petrol,145,57.9,1.2
+Skoda,Kodiaq,2017,9660,Manual,40621,Diesel,145,60.3,1.6
+Skoda,Kodiaq,2014,7230,Manual,46882,Petrol,150,50.5,1.4
+Skoda,Kodiaq,2015,7700,Automatic,52106,Petrol,205,55.7,1.2
+Skoda,Superb,2014,6650,Automatic,59076,Petrol,125,45.8,1.0
+Skoda,Fabia,2016,8540,Manual,31877,Diesel,20,58.9,1.4
+Skoda,Octavia,2016,8960,Semi-Auto,39188,Petrol,150,43.6,1.4
+Skoda,Superb,2018,15810,Manual,26291,Hybrid,135,73.5,1.2
+Skoda,Superb,2013,6390,Manual,63971,Petrol,20,51.6,1.2
+Skoda,Octavia,2015,8640,Manual,51812,Diesel,145,46.7,1.2
+Skoda,Kodiaq,2018,12830,Automatic,25141,Petrol,145,56.4,1.6
+Skoda,Octavia,2018,15880,Automatic,20410,Hybrid,135,77.6,1.0
+Skoda,Superb,2017,9280,Automatic,30660,Petrol,145,62.5,1.0
+Skoda,Octavia,2013,6450,Manual,54697,Diesel,30,69.6,1.0
+Skoda,Kodiaq,2017,10530,Manual,33582,Petrol,145,43.9,2.0
+Skoda,Fabia,2016,9520,Automatic,42571,Petrol,125,49.7,1.0
+Skoda,Octavia,2015,8140,Manual,58713,Diesel,150,59.0,1.4
+Skoda,Fabia,2016,10610,Automatic,27554,Diesel,150,62.3,2.0
+Skoda,Kodiaq,2016,9310,Manual,45334,Petrol,30,53.3,1.2
+Skoda,Kodiaq,2017,10030,Manual,31606,Petrol,145,58.9,1.6
+Toyota,Yaris,2015,10180,Semi-Auto,52923,Petrol,30,50.6,1.6
+Toyota,RAV4,2018,16590,Automatic,17517,Petrol,145,44.2,2.0
+Toyota,C-HR,2016,11360,Automatic,28574,Diesel,30,63.4,1.2
+Toyota,Yaris,2019,18030,Manual,12519,Hybrid,135,77.8,1.4
+Toyota,Corolla,2016,11860,Manual,28887,Petrol,150,61.6,1.2
+Toyota,C-HR,2019,19880,Manual,14763,Diesel,145,56.3,1.2
+Toyota,RAV4,2017,14830,Semi-Auto,25175,Petrol,145,54.8,1.6
+Toyota,Corolla,2016,12060,Manual,42753,Petrol,150,43.3,1.4
+Toyota,Yaris,2020,24310,Manual,14121,Petrol,145,36.7,2.0
+Toyota,RAV4,2017,14000,Manual,27377,Hybrid,135,75.1,1.2
+Toyota,Aygo,2016,11260,Manual,37189,Petrol,30,48.1,1.0
+Toyota,C-HR,2017,12960,Manual,38497,Petrol,145,61.0,1.4
+Toyota,Aygo,2014,8460,Manual,58596,Diesel,145,51.6,1.0
+Toyota,C-HR,2013,6600,Manual,71677,Petrol,150,47.4,2.0
+Toyota,Corolla,2018,14390,Manual,24824,Petrol,145,42.2,1.0
+Toyota,Corolla,2017,13790,Automatic,29630,Petrol,145,49.6,1.0
+Toyota,RAV4,2019,18380,Manual,7328,Petrol,145,57.3,1.0
+Toyota,Yaris,2016,11290,Manual,29559,Petrol,150,48.8,1.6
+Toyota,C-HR,2014,10000,Manual,49667,Petrol,145,47.2,1.6
+Toyota,C-HR,2020,24110,Manual,12756,Hybrid,135,59.6,1.2
+Toyota,C-HR,2018,16280,Manual,27853,Diesel,145,59.2,1.4
+Toyota,Corolla,2018,16700,Manual,15513,Diesel,145,57.1,2.0
+Toyota,Aygo,2018,13140,Manual,26990,Petrol,145,55.8,1.4
+Toyota,Aygo,2018,18870,Manual,20756,Diesel,145,58.8,1.4
+Toyota,RAV4,2017,14320,Manual,38874,Petrol,145,50.7,1.2
+Toyota,C-HR,2017,12660,Automatic,28127,Petrol,145,57.7,1.6
+Toyota,Aygo,2017,12660,Manual,33681,Diesel,145,68.8,1.4
+Toyota,C-HR,2020,21220,Manual,5697,Petrol,145,46.0,1.2
+Toyota,Corolla,2016,11670,Manual,36787,Petrol,0,55.5,1.2
+Toyota,Corolla,2016,10610,Manual,40744,Petrol,20,62.9,1.4
+Toyota,Corolla,2018,18240,Manual,35816,Hybrid,135,65.0,1.4
+Toyota,Yaris,2020,20450,Semi-Auto,6368,Petrol,145,54.1,2.0
+Toyota,Aygo,2017,14450,Manual,24851,Petrol,145,48.9,1.2
+Toyota,Aygo,2013,7510,Manual,60079,Petrol,145,43.8,1.4
+VW,T-Roc,2018,15450,Manual,17791,Petrol,145,60.7,2.0
+VW,T-Roc,2017,14090,Manual,26873,Hybrid,135,56.3,1.2
+VW,Tiguan,2019,21300,Automatic,9027,Petrol,145,58.0,2.0
+VW,T-Roc,2019,18370,Manual,14379,Petrol,145,49.3,1.2
+VW,Golf,2020,24600,Manual,4000,Diesel,145,56.0,1.2
+VW,T-Roc,2017,14590,Semi-Auto,36216,Petrol,145,50.1,1.6
+VW,Polo,2018,14060,Manual,19432,Petrol,145,63.6,1.4
+VW,Golf,2016,12800,Automatic,44116,Petrol,145,45.3,1.2
+VW,Golf,2017,13790,Semi-Auto,32122,Petrol,145,58.2,1.6
+VW,Tiguan,2016,12570,Manual,29381,Diesel,20,70.9,1.6
+VW,Passat,2016,14360,Manual,38373,Petrol,145,58.2,1.0
+VW,Passat,2016,10590,Manual,37295,Petrol,30,50.8,1.2
+VW,Polo,2019,18800,Manual,6620,Petrol,145,38.8,2.0
+VW,Golf,2018,16990,Semi-Auto,21921,Petrol,145,50.8,1.4
+VW,Tiguan,2019,19010,Manual,6204,Petrol,145,49.4,1.0
+VW,T-Roc,2019,20320,Manual,6332,Petrol,145,51.6,1.4
+VW,Tiguan,2017,13870,Manual,39550,Petrol,145,41.5,1.6
+VW,Golf,2013,9320,Semi-Auto,71469,Petrol,150,46.8,1.4
+VW,Passat,2018,16590,Automatic,20612,Diesel,145,62.8,1.2
+VW,T-Roc,2017,13910,Semi-Auto,36414,Petrol,145,41.4,1.4
+VW,Polo,2013,8270,Semi-Auto,60407,Petrol,20,44.1,1.6
+VW,Polo,2018,17940,Manual,15337,Diesel,145,61.3,1.6
+VW,Tiguan,2018,16120,Manual,29028,Diesel,145,59.4,1.0
+VW,T-Roc,2016,11560,Manual,46929,Diesel,20,58.8,2.0
+VW,Polo,2017,16150,Automatic,27990,Hybrid,135,73.4,1.6
+VW,Passat,2019,22960,Manual,13622,Diesel,145,68.0,1.4
+VW,Golf,2018,16860,Manual,26338,Diesel,145,53.2,1.0
+VW,Polo,2016,12200,Manual,40362,Diesel,205,55.7,1.0
+VW,Golf,2018,15730,Manual,28909,Diesel,145,54.1,2.0
+VW,Tiguan,2018,17960,Manual,25352,Diesel,145,61.5,1.4
+VW,Tiguan,2020,23160,Manual,5824,Diesel,145,73.3,2.0
+VW,Golf,2016,11970,Automatic,35432,Diesel,145,63.3,1.4
+VW,Golf,2014,9420,Semi-Auto,57434,Petrol,150,52.6,2.0
+VW,T-Roc,2013,7510,Manual,61170,Diesel,145,65.8,1.4
+VW,Passat,2015,10790,Manual,64274,Diesel,30,67.8,1.6
+VW,Polo,2015,11310,Automatic,49087,Petrol,125,44.6,1.0
+VW,Tiguan,2017,15620,Manual,22586,Diesel,145,66.7,1.2
+VW,Tiguan,2017,16080,Manual,27191,Diesel,145,68.8,2.0
+VW,T-Roc,2017,15770,Manual,20912,Diesel,145,55.1,1.0
+VW,T-Roc,2017,15060,Manual,34395,Hybrid,135,69.5,1.2
+VW,Polo,2016,11630,Manual,34579,Petrol,205,40.9,1.4
+VW,Tiguan,2018,18650,Manual,18944,Petrol,145,47.6,1.0
+VW,Tiguan,2016,12600,Automatic,44714,Diesel,30,54.8,1.4
+VW,Passat,2018,18700,Automatic,28745,Petrol,145,38.4,1.4
+VW,Polo,2013,8200,Semi-Auto,61344,Diesel,145,66.3,1.0
+VW,Polo,2018,17990,Automatic,16185,Petrol,145,55.2,1.0
+VW,Golf,2018,19210,Manual,28225,Hybrid,135,75.4,1.6
+VW,Golf,2018,16790,Manual,26897,Petrol,145,56.8,1.2
+VW,T-Roc,2013,7670,Manual,61038,Petrol,150,42.4,1.4
+VW,Golf,2019,19110,Automatic,15773,Petrol,145,57.6,1.6
+VW,Polo,2016,11620,Manual,37025,Diesel,125,56.6,1.4
+VW,T-Roc,2018,18520,Manual,19035,Diesel,145,69.5,1.2
+VW,Passat,2018,17820,Manual,20905,Petrol,145,54.3,1.0
+VW,Polo,2017,15790,Manual,31433,Petrol,145,71.6,2.0
+VW,Passat,2017,14000,Manual,34472,Petrol,145,48.8,1.0
+VW,Polo,2020,24220,Manual,4210,Petrol,145,47.8,1.4
+VW,Tiguan,2014,9810,Semi-Auto,61105,Petrol,150,48.2,1.2
+VW,T-Roc,2014,9320,Manual,53913,Diesel,30,54.4,1.4
+VW,Passat,2019,17230,Automatic,17802,Petrol,145,51.8,1.0
+VW,Polo,2014,10100,Manual,56457,Petrol,125,35.0,1.2
+VW,Passat,2014,9670,Manual,53215,Diesel,125,63.5,1.0
+VW,Golf,2016,13020,Automatic,39265,Diesel,30,51.2,1.6
+VW,Golf,2017,17310,Automatic,30554,Hybrid,135,65.2,2.0
+VW,Golf,2019,19930,Automatic,23931,Diesel,145,58.5,1.4
+VW,Golf,2016,12060,Manual,33194,Petrol,125,54.2,1.4
+VW,Tiguan,2019,18670,Automatic,10881,Petrol,145,39.4,1.4
+VW,Passat,2018,14630,Manual,31291,Petrol,145,35.0,1.4
+VW,Polo,2019,21440,Manual,7517,Petrol,145,58.6,1.0
+VW,Golf,2018,17320,Automatic,27953,Petrol,145,53.7,2.0
+VW,Tiguan,2020,20120,Manual,12819,Petrol,145,45.4,1.6
+VW,Tiguan,2017,14460,Manual,41187,Petrol,145,57.7,1.0
+VW,Polo,2017,14490,Manual,27639,Hybrid,135,85.6,1.6
+VW,T-Roc,2016,11870,Semi-Auto,34446,Diesel,125,62.7,1.2
+VW,Golf,2017,12410,Semi-Auto,33302,Diesel,145,68.6,1.2
+VW,Polo,2017,15240,Automatic,36625,Petrol,145,48.4,1.6
+VW,Tiguan,2020,24120,Manual,9991,Petrol,145,55.1,1.2
+Vauxhall,Insignia,2019,13000,Manual,12295,Petrol,145,60.1,1.2
+Vauxhall,Insignia,2014,6280,Automatic,54827,Petrol,150,41.7,1.2
+Vauxhall,Insignia,2017,9110,Automatic,29603,Petrol,145,40.2,1.0
+Vauxhall,Astra,2019,13760,Manual,12894,Petrol,145,50.1,1.2
+Vauxhall,Mokka X,2020,14210,Manual,5321,Diesel,145,64.7,1.2
+Vauxhall,Insignia,2020,15500,Manual,13686,Petrol,145,40.6,1.4
+Vauxhall,Insignia,2016,8600,Manual,43847,Petrol,150,52.8,1.4
+Vauxhall,Corsa,2014,6590,Manual,61869,Petrol,0,57.2,1.2
+Vauxhall,Corsa,2019,13930,Manual,12210,Diesel,145,67.0,1.6
+Vauxhall,Astra,2016,8910,Manual,46697,Petrol,30,56.0,1.2
+Vauxhall,Astra,2014,6340,Manual,58097,Petrol,20,52.4,2.0
+Vauxhall,Corsa,2016,8560,Manual,42647,Diesel,125,76.2,1.4
+Vauxhall,Insignia,2016,8620,Manual,34701,Petrol,125,53.1,1.0
+Vauxhall,Corsa,2015,8280,Manual,44458,Petrol,30,40.3,1.4
+Vauxhall,Insignia,2016,9480,Manual,43533,Petrol,145,54.5,1.2
+Vauxhall,Insignia,2013,6180,Manual,54409,Petrol,20,48.1,1.6
+Vauxhall,Corsa,2017,11640,Automatic,25741,Petrol,145,43.5,1.6
+Vauxhall,Astra,2019,12910,Semi-Auto,20148,Petrol,145,48.2,1.6
+Vauxhall,Insignia,2019,13370,Semi-Auto,6196,Petrol,145,48.1,1.4
+Vauxhall,Insignia,2015,8110,Automatic,55120,Diesel,30,67.0,1.0
+Vauxhall,Insignia,2019,13820,Manual,12319,Hybrid,135,72.1,1.2
+Vauxhall,Insignia,2014,6410,Manual,55171,Petrol,30,51.0,1.2
+Vauxhall,Corsa,2020,17650,Manual,8219,Diesel,145,66.3,1.6
+Vauxhall,Mokka X,2016,8210,Semi-Auto,42188,Petrol,145,41.5,1.6
+Vauxhall,Insignia,2017,10860,Semi-Auto,38025,Hybrid,135,62.7,1.6
+Vauxhall,Astra,2016,7740,Manual,38188,Petrol,30,44.8,1.2
+Vauxhall,Mokka X,2016,9000,Automatic,37823,Diesel,145,65.3,1.4
+Vauxhall,Corsa,2013,5910,Manual,60300,Diesel,20,64.0,1.4
+Vauxhall,Astra,2020,16870,Manual,10243,Diesel,145,66.4,1.2
+Vauxhall,Mokka X,2016,8240,Automatic,42957,Petrol,125,46.6,1.6
+Vauxhall,Astra,2017,8610,Manual,27992,Petrol,145,69.6,1.4
+Vauxhall,Insignia,2016,8450,Automatic,35101,Petrol,30,55.3,1.4
+Vauxhall,Astra,2018,9860,Manual,21006,Petrol,145,55.3,1.2
+Vauxhall,Mokka X,2016,8750,Manual,45533,Diesel,145,58.9,1.4
+Vauxhall,Astra,2013,5070,Manual,67603,Diesel,125,61.5,1.4
+Vauxhall,Insignia,2016,9930,Semi-Auto,33901,Diesel,30,62.3,2.0
+Vauxhall,Astra,2013,5380,Automatic,61977,Petrol,125,48.8,2.0
+Vauxhall,Corsa,2020,15080,Manual,4825,Petrol,145,56.9,1.4
+Vauxhall,Mokka X,2016,8830,Manual,39975,Diesel,150,58.3,1.4
+Vauxhall,Corsa,2018,13010,Manual,18073,Petrol,145,56.7,2.0
+Vauxhall,Astra,2016,8410,Manual,37941,Diesel,145,63.6,1.2
+Vauxhall,Mokka X,2016,9570,Manual,38121,Diesel,150,61.0,2.0
+Vauxhall,Mokka X,2017,11570,Manual,22994,Diesel,145,45.7,1.4
+Vauxhall,Astra,2014,6070,Automatic,51640,Diesel,20,62.6,1.2
+Vauxhall,Astra,2014,6590,Semi-Auto,56156,Diesel,150,53.7,1.0
+Vauxhall,Corsa,2020,15960,Manual,7395,Petrol,145,42.8,1.2
+Vauxhall,Insignia,2016,8420,Manual,32067,Petrol,20,40.9,1.0
+Vauxhall,Mokka X,2015,6930,Manual,49380,Diesel,125,59.1,1.0
+Vauxhall,Insignia,2017,9210,Manual,23914,Petrol,145,38.8,2.0
+Vauxhall,Astra,2020,18030,Manual,6865,Hybrid,135,70.4,1.0
+Vauxhall,Mokka X,2017,8890,Semi-Auto,21828,Petrol,145,67.0,1.4
+Vauxhall,Insignia,2017,10120,Manual,29257,Petrol,145,52.3,1.0
+Vauxhall,Corsa,2017,10460,Automatic,34262,Petrol,145,40.0,1.0
+Vauxhall,Astra,2020,15540,Manual,7032,Petrol,145,53.3,1.4
+Vauxhall,Astra,2016,7980,Manual,39733,Petrol,150,49.6,1.6
+Vauxhall,Mokka X,2019,13200,Manual,13379,Petrol,145,50.2,1.6
+Vauxhall,Astra,2020,16760,Automatic,10507,Petrol,145,53.6,2.0
+Vauxhall,Corsa,2019,12310,Manual,8128,Diesel,145,63.5,1.2
+Vauxhall,Astra,2018,11330,Manual,18424,Petrol,145,55.4,1.0
+Vauxhall,Mokka X,2018,10610,Manual,14577,Petrol,145,58.4,1.2
+Vauxhall,Astra,2017,10520,Manual,24912,Petrol,145,57.1,1.6
+Vauxhall,Insignia,2015,7540,Automatic,48992,Diesel,145,59.8,1.2
+Vauxhall,Mokka X,2018,11820,Automatic,17490,Petrol,145,62.1,2.0
+Vauxhall,Astra,2016,8470,Automatic,44421,Petrol,30,40.5,2.0
+Vauxhall,Insignia,2016,9110,Semi-Auto,33793,Petrol,30,41.4,1.0
+Vauxhall,Corsa,2017,9990,Manual,26614,Petrol,145,48.8,1.4
+Vauxhall,Insignia,2013,5090,Automatic,64427,Petrol,30,46.0,1.0
+Vauxhall,Corsa,2017,10640,Manual,30054,Hybrid,135,74.6,1.2
+Vauxhall,Astra,2017,9740,Semi-Auto,35361,Petrol,145,57.4,1.4
