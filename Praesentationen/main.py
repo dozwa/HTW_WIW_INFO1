@@ -1,26 +1,45 @@
-﻿import os
+﻿import sqlite3 as s
 
-pfad = "tagesreport_demo.txt"
+conn = s.connect("produkt.db")
 
-file = open(pfad, "w")
-file.write("Veggie Soles -- Reporting\nWas wir so auf Lager haben\n")
-file.write("Eco-Sneaker 89.95 EUR\n")
-file.write("Hemp-High   109.00 EUR\n")
-file.write("Bambus-Boot 135.50")
-file.close()
+cursor = conn.cursor()
 
-file = open(pfad, "r")
-print("--- file-Inhalt ---")
+# cursor.execute("""
+#         CREATE TABLE produkt (
+#         produkt_id INTEGER PRIMARY KEY,
+#         name       TEXT NOT NULL, 
+#         preis      REAL,
+#         kategorie  TEXT
+#         )
+#         """)
 
-inhalt = file.readlines()
-print(inhalt)
+# sql = "INSERT INTO produkt (name, preis, kategorie) VALUES (?, ?, ?)"
+# cursor.execute(sql, ("Eco-Sneaker", 89.95, "Low-Cut"))
 
-n = 1
-for line in inhalt:
-    print("Zeile ", n, ": ", line, end="")
-    n += 1
+# produkte = [("Test", 12.34, "Neu"), ("Test2", 42.24, "ALT")]
 
-file.close()
+# cursor.executemany(sql, produkte)
 
-os.remove(pfad)
-print("file gelöscht")
+# conn.commit()
+
+sql = "SELECT * FROM produkt"
+
+cursor.execute(sql)
+
+print("Alle Produkte:")
+cursor.execute("SELECT * FROM produkt")
+for zeile in cursor.fetchall():
+    print("  ", zeile) 
+
+print("Nur Namen")
+cursor.execute("SELECT name FROM produkt")
+for zeile in cursor.fetchall():
+    print("  ", zeile)
+
+print("Mit Klausel")
+grenze = 50.0
+cursor.execute("SELECT name FROM produkt WHERE preis > ?", (grenze, ))
+for zeile in cursor.fetchall():
+    print("  ", zeile)
+
+conn.close()

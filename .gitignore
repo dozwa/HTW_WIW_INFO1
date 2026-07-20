@@ -44,3 +44,7 @@ Grafiken_src/
 Praesentationen_src/
 Uebungen_src/
 Klassiker_src/
+
+# Streudateien aus SQL-Live-Demos (DB Browser for SQLite, erzeugte DBs)
+*.sqbpro
+*.db
