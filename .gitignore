@@ -48,3 +48,7 @@ Klassiker_src/
 # Streudateien aus SQL-Live-Demos (DB Browser for SQLite, erzeugte DBs)
 *.sqbpro
 *.db
+
+# Selbstlern-Videos (Quellen + große MP4s, Upload nach Moodle/Mediathek)
+Videos_src/
+Videos/
