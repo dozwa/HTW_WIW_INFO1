@@ -57,6 +57,7 @@ HTW_WIW_INFO1/
 ├── Cheat_Sheets/      Cheat Sheets als PDF (Pandas, SQLite)
 ├── Praesentationen/   Vorlesungsfolien als PDF
 ├── Grafiken/          Diagramme (PNG), in Notebooks und Folien eingebettet
+├── Grafik_Theme/      Einheitlicher Stil für neue Grafiken (Python-Modul + Beispiele)
 ├── README.md          Dieses Dokument
 └── LICENSE            CC BY-SA 4.0
 ```
