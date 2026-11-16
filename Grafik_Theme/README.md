@@ -76,6 +76,19 @@ aufbau(zeichne, "07_aufruf", schritte=3)    # 07_aufruf_1.pdf ... _3.pdf
 
 In Beamer: `\includegraphics<1>{07_aufruf_1}\includegraphics<2>{07_aufruf_2}...`
 
+## Animationen mit Manim (Probe)
+
+`manim_probe.py` zeigt denselben Funktionsaufruf als Animation mit Manim, der
+Bibliothek hinter den 3Blue1Brown-Videos (Community-Ausgabe 0.22). Ergebnis:
+[`beispiele/manim_funktionsaufruf.mp4`](beispiele/manim_funktionsaufruf.mp4),
+zum Vergleich auf dunklem Grund
+[`beispiele/manim_funktionsaufruf_dunkel.mp4`](beispiele/manim_funktionsaufruf_dunkel.mp4).
+
+Manim lohnt sich, wo Bewegung selbst die Erklärung ist (ein Wert wandert,
+eine Liste wird sortiert). Für Standbilder bleibt `info1_theme.py` einfacher:
+Manim braucht Pango und Cairo als Systempakete und für Formelsatz zusätzlich
+LaTeX; die dunkle Variante ist nicht auf Farbfehlsichtigkeit geprüft.
+
 ## Bausteine
 
 | Methode | Wofür |
